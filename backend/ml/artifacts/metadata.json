@@ -1,0 +1,4287 @@
+{
+  "model_version": "1.0.0",
+  "model_name": "HistGradientBoosting",
+  "dataset_source": "Mumbai Residential Property Dataset (Mumbai1.csv)",
+  "features": {
+    "numerical": [
+      "Area",
+      "No. of Bedrooms"
+    ],
+    "categorical": [
+      "Location"
+    ],
+    "binary": [
+      "New/Resale",
+      "Gymnasium",
+      "Lift Available",
+      "Car Parking",
+      "Maintenance Staff",
+      "24x7 Security",
+      "Children's Play Area",
+      "Clubhouse",
+      "Intercom",
+      "Landscaped Gardens",
+      "Indoor Games",
+      "Gas Connection",
+      "Jogging Track",
+      "Swimming Pool"
+    ],
+    "all": [
+      "Area",
+      "No. of Bedrooms",
+      "Location",
+      "New/Resale",
+      "Gymnasium",
+      "Lift Available",
+      "Car Parking",
+      "Maintenance Staff",
+      "24x7 Security",
+      "Children's Play Area",
+      "Clubhouse",
+      "Intercom",
+      "Landscaped Gardens",
+      "Indoor Games",
+      "Gas Connection",
+      "Jogging Track",
+      "Swimming Pool"
+    ]
+  },
+  "target": {
+    "name": "Price",
+    "units": "INR (\u20b9)",
+    "description": "Total property price in Indian Rupees"
+  },
+  "metrics": {
+    "Dummy (Median)": {
+      "cv_r2_mean": -0.08009699197396278,
+      "cv_r2_std": 0.008481573835026547,
+      "train_mae": 9788508.96,
+      "train_rmse": 21516865.97,
+      "train_r2": -0.0778,
+      "test_mae": 9180202.36,
+      "test_rmse": 18430619.69,
+      "test_r2": -0.0845
+    },
+    "Ridge Regression": {
+      "cv_r2_mean": -0.028891209712927003,
+      "cv_r2_std": 1.3081356554926524,
+      "train_mae": 4580983.19,
+      "train_rmse": 17013225.72,
+      "train_r2": 0.3262,
+      "test_mae": 4886489.03,
+      "test_rmse": 17914714.97,
+      "test_r2": -0.0246
+    },
+    "Random Forest": {
+      "cv_r2_mean": 0.6941284762279181,
+      "cv_r2_std": 0.04403124622223244,
+      "train_mae": 3435875.91,
+      "train_rmse": 7434203.98,
+      "train_r2": 0.8713,
+      "test_mae": 4909472.96,
+      "test_rmse": 13223480.37,
+      "test_r2": 0.4418
+    },
+    "Extra Trees": {
+      "cv_r2_mean": 0.6979360308159622,
+      "cv_r2_std": 0.053646613881746665,
+      "train_mae": 3285870.88,
+      "train_rmse": 6822061.66,
+      "train_r2": 0.8917,
+      "test_mae": 4961509.64,
+      "test_rmse": 13030707.27,
+      "test_r2": 0.4579
+    },
+    "HistGradientBoosting": {
+      "cv_r2_mean": 0.6449430740519004,
+      "cv_r2_std": 0.06720669333049493,
+      "train_mae": 4063264.24,
+      "train_rmse": 11783481.87,
+      "train_r2": 0.6768,
+      "test_mae": 4490812.1,
+      "test_rmse": 12062948.17,
+      "test_r2": 0.5354
+    }
+  },
+  "feature_importances": [],
+  "residual_std_log": 0.3912,
+  "dataset_summary": {
+    "total_records": 6347,
+    "train_records": 5077,
+    "test_records": 1270,
+    "num_locations": 413,
+    "target_col": "Price",
+    "target_units": "INR (\u20b9)",
+    "price_min": 2000000.0,
+    "price_max": 420000000.0,
+    "price_mean": 15154013.69,
+    "price_median": 9500000.0,
+    "price_std": 20159426.34,
+    "area_min": 200.0,
+    "area_max": 8511.0,
+    "area_mean": 1004.33,
+    "area_median": 905.0,
+    "bedrooms_dist": {
+      "1": 2307,
+      "2": 2601,
+      "3": 1201,
+      "4": 190,
+      "5": 39,
+      "6": 7,
+      "7": 2
+    },
+    "new_resale_dist": {
+      "0": 4178,
+      "1": 2169
+    },
+    "amenities_pct": {
+      "Gymnasium": 58.1,
+      "Lift Available": 80.1,
+      "Car Parking": 56.3,
+      "Maintenance Staff": 28.1,
+      "24x7 Security": 56.3,
+      "Children's Play Area": 55.9,
+      "Clubhouse": 49.6,
+      "Intercom": 48.5,
+      "Landscaped Gardens": 36.1,
+      "Indoor Games": 22.0,
+      "Gas Connection": 24.3,
+      "Jogging Track": 38.1,
+      "Swimming Pool": 45.8
+    }
+  },
+  "supported_locations": [
+    "15th Road",
+    "4 Bunglows",
+    "Adaigaon",
+    "Agripada",
+    "Airoli",
+    "Akurli Nagar",
+    "Almeida Park",
+    "Ambarnath",
+    "Ambernath East",
+    "Ambernath West",
+    "Ambivali",
+    "Ambivli",
+    "Anand Nagar Thane West",
+    "Andheri",
+    "Andheri East",
+    "Andheri West",
+    "Anjurdive",
+    "Antop Hill",
+    "Asangaon",
+    "Badlapur",
+    "Badlapur East",
+    "Badlapur West",
+    "Balkum",
+    "Bandra East",
+    "Bandra Kurla Complex",
+    "Bandra West",
+    "Bangur Nagar",
+    "Belapur",
+    "Beturkar Pada",
+    "Bhakti Park",
+    "Bhandup West",
+    "Bhayandar East",
+    "Bhayandar West",
+    "Bhayandarpada",
+    "Bhiwandi",
+    "Bhoiwada Kalyan",
+    "Boisar",
+    "Borivali",
+    "Borivali East",
+    "Borivali West",
+    "Breach Candy",
+    "Byculla",
+    "CBD Belapur East",
+    "Central Avenue",
+    "Chandivali",
+    "Charkop",
+    "Charkop Sector 8",
+    "Chedda Nagar",
+    "Chembur",
+    "Chembur East",
+    "Chembur Shell Colony",
+    "Churchgate",
+    "DN Nagar Road",
+    "Dadar East",
+    "Dadar West",
+    "Dahisar",
+    "Dahisar East",
+    "Dahisar W",
+    "Dahisar West",
+    "Dattapada",
+    "Deonar",
+    "Devidas Cross Lane",
+    "Dharavi",
+    "Diamond Market Road",
+    "Diva",
+    "Diva Gaon",
+    "Dokali Pada",
+    "Dombivali",
+    "Dombivali East",
+    "Dombivli (West)",
+    "Dronagiri",
+    "Eastern Express Highway Vikhroli",
+    "Four Bungalows",
+    "Four Bunglows",
+    "Gandhar Nagar",
+    "Ganesh Nagar",
+    "Ghansoli",
+    "Ghatkopar",
+    "Ghatkopar East",
+    "Ghatkopar West",
+    "Ghodbunder Road",
+    "Girgaon",
+    "Godrej Hill",
+    "Goregaon",
+    "Goregaon (East)",
+    "Goregaon East",
+    "Goregaon West",
+    "Govandi",
+    "Govind nagar",
+    "Grant Road West",
+    "Greater Khanda",
+    "Gulal Wadi",
+    "Gulmohar Road",
+    "Gundavali Gaothan",
+    "Haji Ali",
+    "Hanuman Chowk",
+    "Hanuman Nagar",
+    "Haridas Nagar",
+    "Haware City",
+    "Hiranandani Estates",
+    "Hiranandani Meadows",
+    "I C Colony",
+    "IT Colony",
+    "Jankalyan Nagar",
+    "Jawahar Nagar",
+    "Jeejamata Nagar",
+    "Jogeshwari East",
+    "Jogeshwari West",
+    "Juhu",
+    "KASHELI",
+    "Kalamboli",
+    "Kalpataru",
+    "Kalwa",
+    "Kalyan",
+    "Kalyan East",
+    "Kalyan West",
+    "Kamothe",
+    "Kamothe Sector 16",
+    "Kandivali East",
+    "Kandivali West",
+    "Kanjurmarg",
+    "Kanjurmarg East",
+    "Kannamwar Nagar II",
+    "Kapur Bawdi",
+    "Kapurbawadi",
+    "Karanjade",
+    "Karave Nagar",
+    "Karjat",
+    "Kasar vadavali",
+    "Kasheli",
+    "Katrap",
+    "Kewale",
+    "Khalapur",
+    "Khar",
+    "Khar West",
+    "Kharegaon",
+    "Kharghar",
+    "Kharghar Sector 34C",
+    "Kharodi",
+    "Khopoli",
+    "Koldongri",
+    "Kolshet Industrial Area",
+    "Kolshet Road",
+    "Kondivita Road",
+    "Kopar Khairane Sector 19A",
+    "Kopara",
+    "Koparkhairane Station Road",
+    "Koper Khairane",
+    "Koproli",
+    "Krishanlal Marwah Marg",
+    "Kulupwadi",
+    "Kurla",
+    "Kurla East",
+    "Kurla West",
+    "Link Road",
+    "Lokhandwala",
+    "Lokhandwala Township",
+    "Lower Parel",
+    "MG Road",
+    "MHADA Colony 20",
+    "Magathane",
+    "Mahalaxmi",
+    "Maharashtra Nagar",
+    "Mahatma Gandhi Road",
+    "Mahim",
+    "Majiwada",
+    "Majiwada thane",
+    "Malabar Hill",
+    "Malad",
+    "Malad East",
+    "Malad West",
+    "Manpada",
+    "Manpada near Tiku ji ni wadi",
+    "Manvel pada Road",
+    "Marine Lines",
+    "Marol",
+    "Matunga",
+    "Mira Bhayandar",
+    "Mira Road",
+    "Mira Road East",
+    "Mira Road and Beyond",
+    "Morya Nagar",
+    "Mulund",
+    "Mulund East",
+    "Mulund West",
+    "Mumbai Agra National Highway",
+    "Mumbai Central",
+    "Mumbai Highway",
+    "Mumbai Nashik Expressway",
+    "Nahur",
+    "Naigaon East",
+    "Nala Sopara",
+    "Nalasopara East",
+    "Nalasopara West",
+    "Napeansea Road",
+    "Natakwala Lane",
+    "Navi Basti",
+    "Neral",
+    "Nere",
+    "Nerul",
+    "Nilje Gaon",
+    "Off Nepean Sea Road",
+    "Off Shimpoli road",
+    "Oshiwara Police Station Road",
+    "Owale",
+    "PARSIK NAGAR",
+    "Padle Gaon",
+    "Palava",
+    "Palghar",
+    "Pali Hill",
+    "Palidevad",
+    "Palm Beach",
+    "Panch Pakhadi",
+    "Pandurangwadi",
+    "Pant Nagar",
+    "Panvel",
+    "Parel",
+    "Parel Village",
+    "Patel Nagar",
+    "Patlipada",
+    "Peddar Road",
+    "Petali",
+    "Phase 2",
+    "Poddar Road",
+    "Pokharan Road",
+    "Pokhran 2",
+    "Pokhran Road No 2",
+    "Poonam Sagar Complex",
+    "Powai",
+    "Powai Lake",
+    "Prabhadevi",
+    "Rajendra Nagar",
+    "Ramdev Park",
+    "Ranjanpada",
+    "Rasayani",
+    "Rawal Pada",
+    "Roadpali",
+    "Rustomjee Global City",
+    "Rutu Enclave",
+    "Sahkar Nagar",
+    "Sainath Nagar",
+    "Saki Naka",
+    "Samata Nagar Thakur Village",
+    "Samata nagar",
+    "Sanpada",
+    "Santacruz East",
+    "Santacruz West",
+    "Sea Face",
+    "Seawoods",
+    "Sector 10",
+    "Sector 10 Kamothe",
+    "Sector 10 Khanda Colony",
+    "Sector 11 Belapur",
+    "Sector 11 Kamothe",
+    "Sector 11 Kharghar",
+    "Sector 12 A",
+    "Sector 12 Kharghar",
+    "Sector 15",
+    "Sector 15 Kharghar",
+    "Sector 17 Ulwe",
+    "Sector 18",
+    "Sector 18 Kamothe",
+    "Sector 18 Kharghar",
+    "Sector 19 Kamothe",
+    "Sector 19 Kharghar",
+    "Sector 19 Nerul",
+    "Sector 19A Nerul",
+    "Sector 2 Ulwe",
+    "Sector 20 Kamothe",
+    "Sector 20 Kharghar",
+    "Sector 21 Kamothe",
+    "Sector 21 Kharghar",
+    "Sector 21 Ulwe",
+    "Sector 22 Kamothe",
+    "Sector 23 Ulwe",
+    "Sector 30",
+    "Sector 30 Kharghar",
+    "Sector 35G",
+    "Sector 35I Kharghar",
+    "Sector 36 Kamothe",
+    "Sector 36 Kharghar",
+    "Sector 5",
+    "Sector 5 Ulwe",
+    "Sector 58A Seawoods Navi Mumbai",
+    "Sector 6",
+    "Sector 7 Kharghar",
+    "Sector 9 Airoli",
+    "Sector-12 Kamothe",
+    "Sector-13 Kharghar",
+    "Sector-18 Ulwe",
+    "Sector-24 Kamothe",
+    "Sector-26 Taloja",
+    "Sector-3 Ulwe",
+    "Sector-34B Kharghar",
+    "Sector-35 Kamothe",
+    "Sector-5 Kamothe",
+    "Sector-50 Seawoods",
+    "Sector-6A Kamothe",
+    "Sector-8 Sanpada",
+    "Sector-8 Ulwe",
+    "Sector-9 Ghansoli",
+    "Sector-9 Ulwe",
+    "Sector12 Kamothe",
+    "Sector12 New Panvel",
+    "Sector13 Khanda Colony",
+    "Sector13 Kharghar",
+    "Sector16 Airoli",
+    "Sector16 Ulwe",
+    "Sector34 A Kharghar",
+    "Sector35D Kharghar",
+    "Sector8 Sanpada",
+    "Sector9 Kamothe",
+    "Sen Nagar",
+    "Seven Bunglow",
+    "Sewri",
+    "Shakti Nagar",
+    "Shastri Nagar",
+    "Shil Phata",
+    "Shilphata Road Thane",
+    "Shimpoli",
+    "Shirgaon",
+    "Shiv Sagar Estate",
+    "Shivaji Colony",
+    "Shreyas Colony",
+    "Sindhi Society Chembur",
+    "Sion",
+    "Soniwadi Road",
+    "Sriprastha",
+    "Suburbs Mumbai",
+    "Suman Nagar",
+    "Sunil Nagar",
+    "Syndicate",
+    "TPS Road",
+    "Taloja",
+    "Taloja Bypass Nitalas Link Road",
+    "Taloje",
+    "Tardeo",
+    "Thakur Village",
+    "Thakur complex",
+    "Thakurli",
+    "Thane",
+    "Thane Belapur Road Kalwa",
+    "Thane West",
+    "Tilak Nagar",
+    "Tilak Nagar Mumbai",
+    "Titwala",
+    "Tolaram Colony",
+    "ULWE SECTOR 19",
+    "Ulwe",
+    "Upper Worli",
+    "Uran",
+    "Vakola",
+    "Vakola Pipeline Road",
+    "Vangani",
+    "Vartak Nagar",
+    "Vasai",
+    "Vasai West",
+    "Vasai east",
+    "Vasant Vihar",
+    "Vashi",
+    "Vasind",
+    "Vazira",
+    "Vedant Complex",
+    "Versova",
+    "Vichumbe",
+    "Vijay Nagar",
+    "Vikhroli",
+    "Vikhroli West",
+    "Vikroli East",
+    "Vile Parle",
+    "Vile Parle E",
+    "Ville Parle East",
+    "Ville Parle West",
+    "Virar",
+    "Virar East",
+    "Virar West",
+    "VishnuNagar",
+    "Vitthalwadi",
+    "Vivek Vidyalaya Marg",
+    "Wadala",
+    "Wadala East",
+    "Wadala East Wadala",
+    "Wadi Bandar",
+    "West Amardeep Colony",
+    "Western Express Highway Kandivali East",
+    "Willingdon",
+    "Worli",
+    "Worli South Mumbai",
+    "Yari Road",
+    "Yogi Hills",
+    "azad nagar",
+    "dhanukarwadi",
+    "gokuldham",
+    "juhu tara",
+    "kandivali",
+    "kavesar",
+    "kolshet",
+    "link road borivali west",
+    "matunga east",
+    "mumbai",
+    "no 9",
+    "raheja vihar",
+    "roadpali navimumbai",
+    "royal palms goregaon east",
+    "sec 50 new",
+    "taloja panchanand",
+    "thakur village kandivali east",
+    "ulhasnagar 4",
+    "vasant vihar thane west",
+    "vile parle west",
+    "vrindavan society",
+    "worli sea Fase",
+    "worli sea face"
+  ],
+  "location_stats": {
+    "15th Road": {
+      "count": 1,
+      "avg_price": 35000000.0,
+      "median_price": 35000000.0,
+      "avg_price_per_sqft": 43750.0,
+      "median_price_per_sqft": 43750.0,
+      "min_area": 800.0,
+      "max_area": 800.0
+    },
+    "4 Bunglows": {
+      "count": 2,
+      "avg_price": 21500000.0,
+      "median_price": 21500000.0,
+      "avg_price_per_sqft": 22592.59,
+      "median_price_per_sqft": 22592.59,
+      "min_area": 675.0,
+      "max_area": 1350.0
+    },
+    "Adaigaon": {
+      "count": 1,
+      "avg_price": 2900000.0,
+      "median_price": 2900000.0,
+      "avg_price_per_sqft": 5087.72,
+      "median_price_per_sqft": 5087.72,
+      "min_area": 570.0,
+      "max_area": 570.0
+    },
+    "Agripada": {
+      "count": 1,
+      "avg_price": 62500000.0,
+      "median_price": 62500000.0,
+      "avg_price_per_sqft": 53648.07,
+      "median_price_per_sqft": 53648.07,
+      "min_area": 1165.0,
+      "max_area": 1165.0
+    },
+    "Airoli": {
+      "count": 28,
+      "avg_price": 9100000.0,
+      "median_price": 7550000.0,
+      "avg_price_per_sqft": 12087.7,
+      "median_price_per_sqft": 11755.24,
+      "min_area": 400.0,
+      "max_area": 1245.0
+    },
+    "Akurli Nagar": {
+      "count": 1,
+      "avg_price": 11399999.0,
+      "median_price": 11399999.0,
+      "avg_price_per_sqft": 25446.43,
+      "median_price_per_sqft": 25446.43,
+      "min_area": 448.0,
+      "max_area": 448.0
+    },
+    "Almeida Park": {
+      "count": 2,
+      "avg_price": 55500000.0,
+      "median_price": 55500000.0,
+      "avg_price_per_sqft": 43437.5,
+      "median_price_per_sqft": 43437.5,
+      "min_area": 900.0,
+      "max_area": 1600.0
+    },
+    "Ambarnath": {
+      "count": 4,
+      "avg_price": 2527000.0,
+      "median_price": 2520000.0,
+      "avg_price_per_sqft": 3816.57,
+      "median_price_per_sqft": 3776.94,
+      "min_area": 640.0,
+      "max_area": 675.0
+    },
+    "Ambernath East": {
+      "count": 15,
+      "avg_price": 3387866.6,
+      "median_price": 3415000.0,
+      "avg_price_per_sqft": 4403.55,
+      "median_price_per_sqft": 4023.14,
+      "min_area": 466.0,
+      "max_area": 1010.0
+    },
+    "Ambernath West": {
+      "count": 15,
+      "avg_price": 2715200.0,
+      "median_price": 2576000.0,
+      "avg_price_per_sqft": 3891.98,
+      "median_price_per_sqft": 4000.0,
+      "min_area": 550.0,
+      "max_area": 910.0
+    },
+    "Ambivali": {
+      "count": 1,
+      "avg_price": 20000000.0,
+      "median_price": 20000000.0,
+      "avg_price_per_sqft": 18264.84,
+      "median_price_per_sqft": 18264.84,
+      "min_area": 1095.0,
+      "max_area": 1095.0
+    },
+    "Ambivli": {
+      "count": 1,
+      "avg_price": 2000000.0,
+      "median_price": 2000000.0,
+      "avg_price_per_sqft": 3125.0,
+      "median_price_per_sqft": 3125.0,
+      "min_area": 640.0,
+      "max_area": 640.0
+    },
+    "Anand Nagar Thane West": {
+      "count": 1,
+      "avg_price": 13500000.0,
+      "median_price": 13500000.0,
+      "avg_price_per_sqft": 10800.0,
+      "median_price_per_sqft": 10800.0,
+      "min_area": 1250.0,
+      "max_area": 1250.0
+    },
+    "Andheri": {
+      "count": 13,
+      "avg_price": 23676923.08,
+      "median_price": 21000000.0,
+      "avg_price_per_sqft": 19767.22,
+      "median_price_per_sqft": 20275.86,
+      "min_area": 620.0,
+      "max_area": 3025.0
+    },
+    "Andheri East": {
+      "count": 83,
+      "avg_price": 17900000.0,
+      "median_price": 16900000.0,
+      "avg_price_per_sqft": 19676.87,
+      "median_price_per_sqft": 18000.0,
+      "min_area": 250.0,
+      "max_area": 2500.0
+    },
+    "Andheri West": {
+      "count": 161,
+      "avg_price": 41255900.61,
+      "median_price": 30000000.0,
+      "avg_price_per_sqft": 27957.1,
+      "median_price_per_sqft": 24615.38,
+      "min_area": 390.0,
+      "max_area": 7600.0
+    },
+    "Anjurdive": {
+      "count": 3,
+      "avg_price": 4351333.33,
+      "median_price": 4500000.0,
+      "avg_price_per_sqft": 8517.58,
+      "median_price_per_sqft": 8280.0,
+      "min_area": 450.0,
+      "max_area": 550.0
+    },
+    "Antop Hill": {
+      "count": 5,
+      "avg_price": 17760000.0,
+      "median_price": 16000000.0,
+      "avg_price_per_sqft": 20508.79,
+      "median_price_per_sqft": 20500.0,
+      "min_area": 650.0,
+      "max_area": 1250.0
+    },
+    "Asangaon": {
+      "count": 1,
+      "avg_price": 2035000.0,
+      "median_price": 2035000.0,
+      "avg_price_per_sqft": 3545.3,
+      "median_price_per_sqft": 3545.3,
+      "min_area": 574.0,
+      "max_area": 574.0
+    },
+    "Badlapur": {
+      "count": 7,
+      "avg_price": 2272571.43,
+      "median_price": 2170000.0,
+      "avg_price_per_sqft": 3965.68,
+      "median_price_per_sqft": 3888.89,
+      "min_area": 480.0,
+      "max_area": 675.0
+    },
+    "Badlapur East": {
+      "count": 40,
+      "avg_price": 3016174.92,
+      "median_price": 2897000.0,
+      "avg_price_per_sqft": 4256.68,
+      "median_price_per_sqft": 3933.98,
+      "min_area": 430.0,
+      "max_area": 1050.0
+    },
+    "Badlapur West": {
+      "count": 8,
+      "avg_price": 2492875.0,
+      "median_price": 2399500.0,
+      "avg_price_per_sqft": 3818.02,
+      "median_price_per_sqft": 3691.92,
+      "min_area": 545.0,
+      "max_area": 715.0
+    },
+    "Balkum": {
+      "count": 2,
+      "avg_price": 7900000.0,
+      "median_price": 7900000.0,
+      "avg_price_per_sqft": 7596.83,
+      "median_price_per_sqft": 7596.83,
+      "min_area": 600.0,
+      "max_area": 1327.0
+    },
+    "Bandra East": {
+      "count": 14,
+      "avg_price": 47375000.0,
+      "median_price": 48750000.0,
+      "avg_price_per_sqft": 31941.54,
+      "median_price_per_sqft": 33426.38,
+      "min_area": 425.0,
+      "max_area": 3000.0
+    },
+    "Bandra Kurla Complex": {
+      "count": 4,
+      "avg_price": 104050000.0,
+      "median_price": 65750000.0,
+      "avg_price_per_sqft": 39563.16,
+      "median_price_per_sqft": 39765.28,
+      "min_area": 832.0,
+      "max_area": 5200.0
+    },
+    "Bandra West": {
+      "count": 23,
+      "avg_price": 69926086.96,
+      "median_price": 60000000.0,
+      "avg_price_per_sqft": 44333.08,
+      "median_price_per_sqft": 40000.0,
+      "min_area": 550.0,
+      "max_area": 3000.0
+    },
+    "Bangur Nagar": {
+      "count": 1,
+      "avg_price": 11700000.0,
+      "median_price": 11700000.0,
+      "avg_price_per_sqft": 24375.0,
+      "median_price_per_sqft": 24375.0,
+      "min_area": 480.0,
+      "max_area": 480.0
+    },
+    "Belapur": {
+      "count": 27,
+      "avg_price": 21498148.15,
+      "median_price": 22000000.0,
+      "avg_price_per_sqft": 13328.24,
+      "median_price_per_sqft": 13000.0,
+      "min_area": 1000.0,
+      "max_area": 5000.0
+    },
+    "Beturkar Pada": {
+      "count": 3,
+      "avg_price": 6300000.0,
+      "median_price": 6500000.0,
+      "avg_price_per_sqft": 6864.19,
+      "median_price_per_sqft": 6764.71,
+      "min_area": 680.0,
+      "max_area": 1100.0
+    },
+    "Bhakti Park": {
+      "count": 2,
+      "avg_price": 21000000.0,
+      "median_price": 21000000.0,
+      "avg_price_per_sqft": 18543.14,
+      "median_price_per_sqft": 18543.14,
+      "min_area": 1130.0,
+      "max_area": 1135.0
+    },
+    "Bhandup West": {
+      "count": 32,
+      "avg_price": 22406249.97,
+      "median_price": 21500000.0,
+      "avg_price_per_sqft": 16201.27,
+      "median_price_per_sqft": 14988.66,
+      "min_area": 425.0,
+      "max_area": 3975.0
+    },
+    "Bhayandar East": {
+      "count": 15,
+      "avg_price": 5415133.33,
+      "median_price": 5160000.0,
+      "avg_price_per_sqft": 7945.11,
+      "median_price_per_sqft": 8000.0,
+      "min_area": 360.0,
+      "max_area": 1040.0
+    },
+    "Bhayandar West": {
+      "count": 1,
+      "avg_price": 10500000.0,
+      "median_price": 10500000.0,
+      "avg_price_per_sqft": 15441.18,
+      "median_price_per_sqft": 15441.18,
+      "min_area": 680.0,
+      "max_area": 680.0
+    },
+    "Bhayandarpada": {
+      "count": 1,
+      "avg_price": 7200000.0,
+      "median_price": 7200000.0,
+      "avg_price_per_sqft": 10300.43,
+      "median_price_per_sqft": 10300.43,
+      "min_area": 699.0,
+      "max_area": 699.0
+    },
+    "Bhiwandi": {
+      "count": 28,
+      "avg_price": 6277285.71,
+      "median_price": 5900000.0,
+      "avg_price_per_sqft": 6193.71,
+      "median_price_per_sqft": 5846.51,
+      "min_area": 568.0,
+      "max_area": 1530.0
+    },
+    "Bhoiwada Kalyan": {
+      "count": 1,
+      "avg_price": 2000000.0,
+      "median_price": 2000000.0,
+      "avg_price_per_sqft": 5128.21,
+      "median_price_per_sqft": 5128.21,
+      "min_area": 390.0,
+      "max_area": 390.0
+    },
+    "Boisar": {
+      "count": 61,
+      "avg_price": 2963590.13,
+      "median_price": 2600000.0,
+      "avg_price_per_sqft": 3435.29,
+      "median_price_per_sqft": 3350.51,
+      "min_area": 465.0,
+      "max_area": 1380.0
+    },
+    "Borivali": {
+      "count": 3,
+      "avg_price": 15166666.67,
+      "median_price": 14500000.0,
+      "avg_price_per_sqft": 15318.05,
+      "median_price_per_sqft": 17490.95,
+      "min_area": 829.0,
+      "max_area": 1155.0
+    },
+    "Borivali East": {
+      "count": 43,
+      "avg_price": 17581395.3,
+      "median_price": 15300000.0,
+      "avg_price_per_sqft": 17597.78,
+      "median_price_per_sqft": 16666.67,
+      "min_area": 372.0,
+      "max_area": 2800.0
+    },
+    "Borivali West": {
+      "count": 176,
+      "avg_price": 15910647.72,
+      "median_price": 13500000.0,
+      "avg_price_per_sqft": 18190.05,
+      "median_price_per_sqft": 17226.5,
+      "min_area": 300.0,
+      "max_area": 3000.0
+    },
+    "Breach Candy": {
+      "count": 2,
+      "avg_price": 115000000.0,
+      "median_price": 115000000.0,
+      "avg_price_per_sqft": 59204.63,
+      "median_price_per_sqft": 59204.63,
+      "min_area": 1500.0,
+      "max_area": 2305.0
+    },
+    "Byculla": {
+      "count": 1,
+      "avg_price": 4500000.0,
+      "median_price": 4500000.0,
+      "avg_price_per_sqft": 13846.15,
+      "median_price_per_sqft": 13846.15,
+      "min_area": 325.0,
+      "max_area": 325.0
+    },
+    "CBD Belapur East": {
+      "count": 5,
+      "avg_price": 16900000.0,
+      "median_price": 19500000.0,
+      "avg_price_per_sqft": 12955.36,
+      "median_price_per_sqft": 13333.33,
+      "min_area": 960.0,
+      "max_area": 1500.0
+    },
+    "Central Avenue": {
+      "count": 5,
+      "avg_price": 47760000.0,
+      "median_price": 50100000.0,
+      "avg_price_per_sqft": 24930.11,
+      "median_price_per_sqft": 17892.86,
+      "min_area": 1100.0,
+      "max_area": 2800.0
+    },
+    "Chandivali": {
+      "count": 1,
+      "avg_price": 13600000.0,
+      "median_price": 13600000.0,
+      "avg_price_per_sqft": 12952.38,
+      "median_price_per_sqft": 12952.38,
+      "min_area": 1050.0,
+      "max_area": 1050.0
+    },
+    "Charkop": {
+      "count": 2,
+      "avg_price": 16399999.5,
+      "median_price": 16399999.5,
+      "avg_price_per_sqft": 20365.59,
+      "median_price_per_sqft": 20365.59,
+      "min_area": 764.0,
+      "max_area": 870.0
+    },
+    "Charkop Sector 8": {
+      "count": 1,
+      "avg_price": 14000000.0,
+      "median_price": 14000000.0,
+      "avg_price_per_sqft": 13806.71,
+      "median_price_per_sqft": 13806.71,
+      "min_area": 1014.0,
+      "max_area": 1014.0
+    },
+    "Chedda Nagar": {
+      "count": 1,
+      "avg_price": 17000000.0,
+      "median_price": 17000000.0,
+      "avg_price_per_sqft": 21935.48,
+      "median_price_per_sqft": 21935.48,
+      "min_area": 775.0,
+      "max_area": 775.0
+    },
+    "Chembur": {
+      "count": 135,
+      "avg_price": 17425096.27,
+      "median_price": 16000000.0,
+      "avg_price_per_sqft": 18487.58,
+      "median_price_per_sqft": 18400.0,
+      "min_area": 430.0,
+      "max_area": 2800.0
+    },
+    "Chembur East": {
+      "count": 16,
+      "avg_price": 21625000.0,
+      "median_price": 19250000.0,
+      "avg_price_per_sqft": 18333.37,
+      "median_price_per_sqft": 17975.56,
+      "min_area": 585.0,
+      "max_area": 1850.0
+    },
+    "Chembur Shell Colony": {
+      "count": 1,
+      "avg_price": 9200000.0,
+      "median_price": 9200000.0,
+      "avg_price_per_sqft": 23000.0,
+      "median_price_per_sqft": 23000.0,
+      "min_area": 400.0,
+      "max_area": 400.0
+    },
+    "Churchgate": {
+      "count": 1,
+      "avg_price": 65000000.0,
+      "median_price": 65000000.0,
+      "avg_price_per_sqft": 54166.67,
+      "median_price_per_sqft": 54166.67,
+      "min_area": 1200.0,
+      "max_area": 1200.0
+    },
+    "DN Nagar Road": {
+      "count": 1,
+      "avg_price": 13600000.0,
+      "median_price": 13600000.0,
+      "avg_price_per_sqft": 22666.67,
+      "median_price_per_sqft": 22666.67,
+      "min_area": 600.0,
+      "max_area": 600.0
+    },
+    "Dadar East": {
+      "count": 2,
+      "avg_price": 82500000.0,
+      "median_price": 82500000.0,
+      "avg_price_per_sqft": 34246.72,
+      "median_price_per_sqft": 34246.72,
+      "min_area": 2350.0,
+      "max_area": 2475.0
+    },
+    "Dadar West": {
+      "count": 3,
+      "avg_price": 43333333.33,
+      "median_price": 37500000.0,
+      "avg_price_per_sqft": 32028.31,
+      "median_price_per_sqft": 32679.74,
+      "min_area": 980.0,
+      "max_area": 1836.0
+    },
+    "Dahisar": {
+      "count": 58,
+      "avg_price": 16892241.34,
+      "median_price": 14500000.0,
+      "avg_price_per_sqft": 17276.25,
+      "median_price_per_sqft": 16800.59,
+      "min_area": 354.0,
+      "max_area": 2730.0
+    },
+    "Dahisar East": {
+      "count": 19,
+      "avg_price": 9976315.79,
+      "median_price": 8750000.0,
+      "avg_price_per_sqft": 13026.69,
+      "median_price_per_sqft": 13846.15,
+      "min_area": 485.0,
+      "max_area": 1300.0
+    },
+    "Dahisar W": {
+      "count": 1,
+      "avg_price": 8000000.0,
+      "median_price": 8000000.0,
+      "avg_price_per_sqft": 12307.69,
+      "median_price_per_sqft": 12307.69,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Dahisar West": {
+      "count": 21,
+      "avg_price": 11480952.38,
+      "median_price": 9200000.0,
+      "avg_price_per_sqft": 15708.8,
+      "median_price_per_sqft": 15384.62,
+      "min_area": 400.0,
+      "max_area": 1500.0
+    },
+    "Dattapada": {
+      "count": 19,
+      "avg_price": 18931578.95,
+      "median_price": 18500000.0,
+      "avg_price_per_sqft": 17265.05,
+      "median_price_per_sqft": 17142.86,
+      "min_area": 600.0,
+      "max_area": 1500.0
+    },
+    "Deonar": {
+      "count": 3,
+      "avg_price": 21833333.33,
+      "median_price": 14500000.0,
+      "avg_price_per_sqft": 22048.14,
+      "median_price_per_sqft": 20864.38,
+      "min_area": 671.0,
+      "max_area": 1426.0
+    },
+    "Devidas Cross Lane": {
+      "count": 1,
+      "avg_price": 13899999.0,
+      "median_price": 13899999.0,
+      "avg_price_per_sqft": 17375.0,
+      "median_price_per_sqft": 17375.0,
+      "min_area": 800.0,
+      "max_area": 800.0
+    },
+    "Dharavi": {
+      "count": 1,
+      "avg_price": 14000000.0,
+      "median_price": 14000000.0,
+      "avg_price_per_sqft": 21538.46,
+      "median_price_per_sqft": 21538.46,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Diamond Market Road": {
+      "count": 1,
+      "avg_price": 34100000.0,
+      "median_price": 34100000.0,
+      "avg_price_per_sqft": 22733.33,
+      "median_price_per_sqft": 22733.33,
+      "min_area": 1500.0,
+      "max_area": 1500.0
+    },
+    "Diva": {
+      "count": 1,
+      "avg_price": 4665000.0,
+      "median_price": 4665000.0,
+      "avg_price_per_sqft": 7046.83,
+      "median_price_per_sqft": 7046.83,
+      "min_area": 662.0,
+      "max_area": 662.0
+    },
+    "Diva Gaon": {
+      "count": 1,
+      "avg_price": 2850000.0,
+      "median_price": 2850000.0,
+      "avg_price_per_sqft": 4956.52,
+      "median_price_per_sqft": 4956.52,
+      "min_area": 575.0,
+      "max_area": 575.0
+    },
+    "Dokali Pada": {
+      "count": 1,
+      "avg_price": 8500000.0,
+      "median_price": 8500000.0,
+      "avg_price_per_sqft": 13076.92,
+      "median_price_per_sqft": 13076.92,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Dombivali": {
+      "count": 44,
+      "avg_price": 5590750.0,
+      "median_price": 4811000.0,
+      "avg_price_per_sqft": 6828.48,
+      "median_price_per_sqft": 6249.64,
+      "min_area": 315.0,
+      "max_area": 2115.0
+    },
+    "Dombivali East": {
+      "count": 27,
+      "avg_price": 4462222.22,
+      "median_price": 4140000.0,
+      "avg_price_per_sqft": 6584.64,
+      "median_price_per_sqft": 6541.51,
+      "min_area": 400.0,
+      "max_area": 1480.0
+    },
+    "Dombivli (West)": {
+      "count": 23,
+      "avg_price": 5069565.22,
+      "median_price": 4600000.0,
+      "avg_price_per_sqft": 7245.0,
+      "median_price_per_sqft": 7142.86,
+      "min_area": 350.0,
+      "max_area": 1075.0
+    },
+    "Dronagiri": {
+      "count": 29,
+      "avg_price": 4374172.41,
+      "median_price": 3600000.0,
+      "avg_price_per_sqft": 5210.09,
+      "median_price_per_sqft": 5072.46,
+      "min_area": 530.0,
+      "max_area": 1540.0
+    },
+    "Eastern Express Highway Vikhroli": {
+      "count": 1,
+      "avg_price": 17000000.0,
+      "median_price": 17000000.0,
+      "avg_price_per_sqft": 13654.62,
+      "median_price_per_sqft": 13654.62,
+      "min_area": 1245.0,
+      "max_area": 1245.0
+    },
+    "Four Bungalows": {
+      "count": 2,
+      "avg_price": 8250000.0,
+      "median_price": 8250000.0,
+      "avg_price_per_sqft": 13366.01,
+      "median_price_per_sqft": 13366.01,
+      "min_area": 450.0,
+      "max_area": 850.0
+    },
+    "Four Bunglows": {
+      "count": 1,
+      "avg_price": 13000000.0,
+      "median_price": 13000000.0,
+      "avg_price_per_sqft": 23636.36,
+      "median_price_per_sqft": 23636.36,
+      "min_area": 550.0,
+      "max_area": 550.0
+    },
+    "Gandhar Nagar": {
+      "count": 1,
+      "avg_price": 4699000.0,
+      "median_price": 4699000.0,
+      "avg_price_per_sqft": 6618.31,
+      "median_price_per_sqft": 6618.31,
+      "min_area": 710.0,
+      "max_area": 710.0
+    },
+    "Ganesh Nagar": {
+      "count": 1,
+      "avg_price": 21000000.0,
+      "median_price": 21000000.0,
+      "avg_price_per_sqft": 28767.12,
+      "median_price_per_sqft": 28767.12,
+      "min_area": 730.0,
+      "max_area": 730.0
+    },
+    "Ghansoli": {
+      "count": 33,
+      "avg_price": 13948484.85,
+      "median_price": 14500000.0,
+      "avg_price_per_sqft": 12044.11,
+      "median_price_per_sqft": 12612.61,
+      "min_area": 400.0,
+      "max_area": 2065.0
+    },
+    "Ghatkopar": {
+      "count": 12,
+      "avg_price": 25425000.0,
+      "median_price": 23250000.0,
+      "avg_price_per_sqft": 15958.87,
+      "median_price_per_sqft": 15960.04,
+      "min_area": 676.0,
+      "max_area": 3410.0
+    },
+    "Ghatkopar East": {
+      "count": 7,
+      "avg_price": 24500000.0,
+      "median_price": 14000000.0,
+      "avg_price_per_sqft": 17847.16,
+      "median_price_per_sqft": 17155.43,
+      "min_area": 335.0,
+      "max_area": 3410.0
+    },
+    "Ghatkopar West": {
+      "count": 39,
+      "avg_price": 19623076.9,
+      "median_price": 16000000.0,
+      "avg_price_per_sqft": 18073.38,
+      "median_price_per_sqft": 15702.48,
+      "min_area": 410.0,
+      "max_area": 5150.0
+    },
+    "Ghodbunder Road": {
+      "count": 1,
+      "avg_price": 5400000.0,
+      "median_price": 5400000.0,
+      "avg_price_per_sqft": 9872.03,
+      "median_price_per_sqft": 9872.03,
+      "min_area": 547.0,
+      "max_area": 547.0
+    },
+    "Girgaon": {
+      "count": 1,
+      "avg_price": 85000000.0,
+      "median_price": 85000000.0,
+      "avg_price_per_sqft": 76853.53,
+      "median_price_per_sqft": 76853.53,
+      "min_area": 1106.0,
+      "max_area": 1106.0
+    },
+    "Godrej Hill": {
+      "count": 2,
+      "avg_price": 4250000.0,
+      "median_price": 4250000.0,
+      "avg_price_per_sqft": 9693.48,
+      "median_price_per_sqft": 9693.48,
+      "min_area": 342.0,
+      "max_area": 534.0
+    },
+    "Goregaon": {
+      "count": 19,
+      "avg_price": 28031578.95,
+      "median_price": 23500000.0,
+      "avg_price_per_sqft": 16864.59,
+      "median_price_per_sqft": 16410.26,
+      "min_area": 340.0,
+      "max_area": 3507.0
+    },
+    "Goregaon (East)": {
+      "count": 1,
+      "avg_price": 35000000.0,
+      "median_price": 35000000.0,
+      "avg_price_per_sqft": 24911.03,
+      "median_price_per_sqft": 24911.03,
+      "min_area": 1405.0,
+      "max_area": 1405.0
+    },
+    "Goregaon East": {
+      "count": 64,
+      "avg_price": 28981234.34,
+      "median_price": 26000000.0,
+      "avg_price_per_sqft": 19313.44,
+      "median_price_per_sqft": 19378.21,
+      "min_area": 340.0,
+      "max_area": 3600.0
+    },
+    "Goregaon West": {
+      "count": 86,
+      "avg_price": 23294767.44,
+      "median_price": 19750000.0,
+      "avg_price_per_sqft": 18933.21,
+      "median_price_per_sqft": 17964.51,
+      "min_area": 510.0,
+      "max_area": 3888.0
+    },
+    "Govandi": {
+      "count": 3,
+      "avg_price": 13933333.33,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 18624.87,
+      "median_price_per_sqft": 17692.31,
+      "min_area": 625.0,
+      "max_area": 926.0
+    },
+    "Govind nagar": {
+      "count": 1,
+      "avg_price": 11299999.0,
+      "median_price": 11299999.0,
+      "avg_price_per_sqft": 15066.67,
+      "median_price_per_sqft": 15066.67,
+      "min_area": 750.0,
+      "max_area": 750.0
+    },
+    "Grant Road West": {
+      "count": 2,
+      "avg_price": 41250000.0,
+      "median_price": 41250000.0,
+      "avg_price_per_sqft": 22013.89,
+      "median_price_per_sqft": 22013.89,
+      "min_area": 1800.0,
+      "max_area": 2000.0
+    },
+    "Greater Khanda": {
+      "count": 5,
+      "avg_price": 6020000.0,
+      "median_price": 7100000.0,
+      "avg_price_per_sqft": 7626.39,
+      "median_price_per_sqft": 7500.0,
+      "min_area": 410.0,
+      "max_area": 1050.0
+    },
+    "Gulal Wadi": {
+      "count": 1,
+      "avg_price": 9000000.0,
+      "median_price": 9000000.0,
+      "avg_price_per_sqft": 7200.0,
+      "median_price_per_sqft": 7200.0,
+      "min_area": 1250.0,
+      "max_area": 1250.0
+    },
+    "Gulmohar Road": {
+      "count": 1,
+      "avg_price": 65000000.0,
+      "median_price": 65000000.0,
+      "avg_price_per_sqft": 43333.33,
+      "median_price_per_sqft": 43333.33,
+      "min_area": 1500.0,
+      "max_area": 1500.0
+    },
+    "Gundavali Gaothan": {
+      "count": 1,
+      "avg_price": 32500000.0,
+      "median_price": 32500000.0,
+      "avg_price_per_sqft": 29545.45,
+      "median_price_per_sqft": 29545.45,
+      "min_area": 1100.0,
+      "max_area": 1100.0
+    },
+    "Haji Ali": {
+      "count": 1,
+      "avg_price": 70000000.0,
+      "median_price": 70000000.0,
+      "avg_price_per_sqft": 47748.98,
+      "median_price_per_sqft": 47748.98,
+      "min_area": 1466.0,
+      "max_area": 1466.0
+    },
+    "Hanuman Chowk": {
+      "count": 1,
+      "avg_price": 80000000.0,
+      "median_price": 80000000.0,
+      "avg_price_per_sqft": 32613.13,
+      "median_price_per_sqft": 32613.13,
+      "min_area": 2453.0,
+      "max_area": 2453.0
+    },
+    "Hanuman Nagar": {
+      "count": 2,
+      "avg_price": 165000000.0,
+      "median_price": 165000000.0,
+      "avg_price_per_sqft": 48366.56,
+      "median_price_per_sqft": 48366.56,
+      "min_area": 2150.0,
+      "max_area": 4200.0
+    },
+    "Haridas Nagar": {
+      "count": 2,
+      "avg_price": 21500000.0,
+      "median_price": 21500000.0,
+      "avg_price_per_sqft": 23543.54,
+      "median_price_per_sqft": 23543.54,
+      "min_area": 900.0,
+      "max_area": 925.0
+    },
+    "Haware City": {
+      "count": 5,
+      "avg_price": 5992400.0,
+      "median_price": 5556000.0,
+      "avg_price_per_sqft": 6522.53,
+      "median_price_per_sqft": 6353.35,
+      "min_area": 560.0,
+      "max_area": 1149.0
+    },
+    "Hiranandani Estates": {
+      "count": 9,
+      "avg_price": 15272222.22,
+      "median_price": 10900000.0,
+      "avg_price_per_sqft": 13186.48,
+      "median_price_per_sqft": 13259.67,
+      "min_area": 600.0,
+      "max_area": 2200.0
+    },
+    "Hiranandani Meadows": {
+      "count": 5,
+      "avg_price": 20200000.0,
+      "median_price": 21500000.0,
+      "avg_price_per_sqft": 15464.74,
+      "median_price_per_sqft": 16371.68,
+      "min_area": 550.0,
+      "max_area": 1580.0
+    },
+    "I C Colony": {
+      "count": 1,
+      "avg_price": 5500000.0,
+      "median_price": 5500000.0,
+      "avg_price_per_sqft": 13750.0,
+      "median_price_per_sqft": 13750.0,
+      "min_area": 400.0,
+      "max_area": 400.0
+    },
+    "IT Colony": {
+      "count": 2,
+      "avg_price": 3600000.0,
+      "median_price": 3600000.0,
+      "avg_price_per_sqft": 4953.71,
+      "median_price_per_sqft": 4953.71,
+      "min_area": 670.0,
+      "max_area": 790.0
+    },
+    "Jankalyan Nagar": {
+      "count": 5,
+      "avg_price": 12540000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 12500.49,
+      "median_price_per_sqft": 12105.26,
+      "min_area": 350.0,
+      "max_area": 1300.0
+    },
+    "Jawahar Nagar": {
+      "count": 4,
+      "avg_price": 9450000.0,
+      "median_price": 8900000.0,
+      "avg_price_per_sqft": 22939.95,
+      "median_price_per_sqft": 24041.35,
+      "min_area": 350.0,
+      "max_area": 500.0
+    },
+    "Jeejamata Nagar": {
+      "count": 2,
+      "avg_price": 19250000.0,
+      "median_price": 19250000.0,
+      "avg_price_per_sqft": 20667.54,
+      "median_price_per_sqft": 20667.54,
+      "min_area": 815.0,
+      "max_area": 1050.0
+    },
+    "Jogeshwari East": {
+      "count": 6,
+      "avg_price": 20283333.33,
+      "median_price": 15850000.0,
+      "avg_price_per_sqft": 21902.07,
+      "median_price_per_sqft": 20724.55,
+      "min_area": 300.0,
+      "max_area": 1820.0
+    },
+    "Jogeshwari West": {
+      "count": 29,
+      "avg_price": 15375862.07,
+      "median_price": 14500000.0,
+      "avg_price_per_sqft": 16538.61,
+      "median_price_per_sqft": 16315.79,
+      "min_area": 500.0,
+      "max_area": 2200.0
+    },
+    "Juhu": {
+      "count": 36,
+      "avg_price": 66983333.33,
+      "median_price": 55000000.0,
+      "avg_price_per_sqft": 40473.87,
+      "median_price_per_sqft": 39678.58,
+      "min_area": 600.0,
+      "max_area": 5460.0
+    },
+    "KASHELI": {
+      "count": 2,
+      "avg_price": 2252500.0,
+      "median_price": 2252500.0,
+      "avg_price_per_sqft": 4269.12,
+      "median_price_per_sqft": 4269.12,
+      "min_area": 495.0,
+      "max_area": 560.0
+    },
+    "Kalamboli": {
+      "count": 8,
+      "avg_price": 11525000.0,
+      "median_price": 9750000.0,
+      "avg_price_per_sqft": 7851.85,
+      "median_price_per_sqft": 7556.05,
+      "min_area": 650.0,
+      "max_area": 3050.0
+    },
+    "Kalpataru": {
+      "count": 1,
+      "avg_price": 19500000.0,
+      "median_price": 19500000.0,
+      "avg_price_per_sqft": 15918.37,
+      "median_price_per_sqft": 15918.37,
+      "min_area": 1225.0,
+      "max_area": 1225.0
+    },
+    "Kalwa": {
+      "count": 29,
+      "avg_price": 7475172.34,
+      "median_price": 6500000.0,
+      "avg_price_per_sqft": 9964.76,
+      "median_price_per_sqft": 9411.76,
+      "min_area": 330.0,
+      "max_area": 2500.0
+    },
+    "Kalyan": {
+      "count": 3,
+      "avg_price": 19195000.0,
+      "median_price": 3985000.0,
+      "avg_price_per_sqft": 6450.5,
+      "median_price_per_sqft": 6260.87,
+      "min_area": 575.0,
+      "max_area": 7000.0
+    },
+    "Kalyan East": {
+      "count": 11,
+      "avg_price": 6099000.0,
+      "median_price": 6900000.0,
+      "avg_price_per_sqft": 6212.02,
+      "median_price_per_sqft": 6509.43,
+      "min_area": 525.0,
+      "max_area": 1700.0
+    },
+    "Kalyan West": {
+      "count": 176,
+      "avg_price": 5402965.89,
+      "median_price": 4725000.0,
+      "avg_price_per_sqft": 6886.75,
+      "median_price_per_sqft": 6571.43,
+      "min_area": 350.0,
+      "max_area": 1560.0
+    },
+    "Kamothe": {
+      "count": 104,
+      "avg_price": 8236875.0,
+      "median_price": 7350000.0,
+      "avg_price_per_sqft": 7969.97,
+      "median_price_per_sqft": 7451.9,
+      "min_area": 365.0,
+      "max_area": 2250.0
+    },
+    "Kamothe Sector 16": {
+      "count": 3,
+      "avg_price": 8333333.33,
+      "median_price": 9400000.0,
+      "avg_price_per_sqft": 8276.68,
+      "median_price_per_sqft": 7885.91,
+      "min_area": 660.0,
+      "max_area": 1245.0
+    },
+    "Kandivali East": {
+      "count": 141,
+      "avg_price": 19942482.19,
+      "median_price": 16500000.0,
+      "avg_price_per_sqft": 17073.26,
+      "median_price_per_sqft": 15625.0,
+      "min_area": 300.0,
+      "max_area": 5320.0
+    },
+    "Kandivali West": {
+      "count": 115,
+      "avg_price": 14320869.55,
+      "median_price": 13700000.0,
+      "avg_price_per_sqft": 16043.42,
+      "median_price_per_sqft": 15263.16,
+      "min_area": 335.0,
+      "max_area": 2000.0
+    },
+    "Kanjurmarg": {
+      "count": 28,
+      "avg_price": 17374999.89,
+      "median_price": 16950000.0,
+      "avg_price_per_sqft": 21139.33,
+      "median_price_per_sqft": 25170.87,
+      "min_area": 484.0,
+      "max_area": 1421.0
+    },
+    "Kanjurmarg East": {
+      "count": 4,
+      "avg_price": 10500000.0,
+      "median_price": 11400000.0,
+      "avg_price_per_sqft": 18521.48,
+      "median_price_per_sqft": 22587.41,
+      "min_area": 450.0,
+      "max_area": 723.0
+    },
+    "Kannamwar Nagar II": {
+      "count": 2,
+      "avg_price": 7250000.0,
+      "median_price": 7250000.0,
+      "avg_price_per_sqft": 15568.18,
+      "median_price_per_sqft": 15568.18,
+      "min_area": 400.0,
+      "max_area": 550.0
+    },
+    "Kapur Bawdi": {
+      "count": 2,
+      "avg_price": 20100000.0,
+      "median_price": 20100000.0,
+      "avg_price_per_sqft": 11762.42,
+      "median_price_per_sqft": 11762.42,
+      "min_area": 1120.0,
+      "max_area": 2300.0
+    },
+    "Kapurbawadi": {
+      "count": 1,
+      "avg_price": 12000000.0,
+      "median_price": 12000000.0,
+      "avg_price_per_sqft": 12631.58,
+      "median_price_per_sqft": 12631.58,
+      "min_area": 950.0,
+      "max_area": 950.0
+    },
+    "Karanjade": {
+      "count": 30,
+      "avg_price": 4786666.67,
+      "median_price": 4000000.0,
+      "avg_price_per_sqft": 6276.54,
+      "median_price_per_sqft": 5919.01,
+      "min_area": 395.0,
+      "max_area": 1100.0
+    },
+    "Karave Nagar": {
+      "count": 1,
+      "avg_price": 39400000.0,
+      "median_price": 39400000.0,
+      "avg_price_per_sqft": 18942.31,
+      "median_price_per_sqft": 18942.31,
+      "min_area": 2080.0,
+      "max_area": 2080.0
+    },
+    "Karjat": {
+      "count": 9,
+      "avg_price": 2438888.89,
+      "median_price": 2100000.0,
+      "avg_price_per_sqft": 3049.12,
+      "median_price_per_sqft": 3000.0,
+      "min_area": 600.0,
+      "max_area": 966.0
+    },
+    "Kasar vadavali": {
+      "count": 1,
+      "avg_price": 7300000.0,
+      "median_price": 7300000.0,
+      "avg_price_per_sqft": 6353.35,
+      "median_price_per_sqft": 6353.35,
+      "min_area": 1149.0,
+      "max_area": 1149.0
+    },
+    "Kasheli": {
+      "count": 4,
+      "avg_price": 2715000.0,
+      "median_price": 2720000.0,
+      "avg_price_per_sqft": 4243.33,
+      "median_price_per_sqft": 4240.84,
+      "min_area": 495.0,
+      "max_area": 780.0
+    },
+    "Katrap": {
+      "count": 1,
+      "avg_price": 3300000.0,
+      "median_price": 3300000.0,
+      "avg_price_per_sqft": 5392.16,
+      "median_price_per_sqft": 5392.16,
+      "min_area": 612.0,
+      "max_area": 612.0
+    },
+    "Kewale": {
+      "count": 6,
+      "avg_price": 3650000.0,
+      "median_price": 3650000.0,
+      "avg_price_per_sqft": 3706.23,
+      "median_price_per_sqft": 3481.96,
+      "min_area": 870.0,
+      "max_area": 1200.0
+    },
+    "Khalapur": {
+      "count": 2,
+      "avg_price": 2149500.0,
+      "median_price": 2149500.0,
+      "avg_price_per_sqft": 2882.22,
+      "median_price_per_sqft": 2882.22,
+      "min_area": 650.0,
+      "max_area": 882.0
+    },
+    "Khar": {
+      "count": 7,
+      "avg_price": 41728571.43,
+      "median_price": 35000000.0,
+      "avg_price_per_sqft": 43744.39,
+      "median_price_per_sqft": 50000.0,
+      "min_area": 525.0,
+      "max_area": 1220.0
+    },
+    "Khar West": {
+      "count": 14,
+      "avg_price": 67214285.71,
+      "median_price": 60500000.0,
+      "avg_price_per_sqft": 41759.66,
+      "median_price_per_sqft": 41402.99,
+      "min_area": 775.0,
+      "max_area": 3800.0
+    },
+    "Kharegaon": {
+      "count": 4,
+      "avg_price": 3639000.0,
+      "median_price": 2950000.0,
+      "avg_price_per_sqft": 8058.53,
+      "median_price_per_sqft": 6852.94,
+      "min_area": 400.0,
+      "max_area": 488.0
+    },
+    "Kharghar": {
+      "count": 533,
+      "avg_price": 10456264.53,
+      "median_price": 9300000.0,
+      "avg_price_per_sqft": 8928.42,
+      "median_price_per_sqft": 8670.52,
+      "min_area": 305.0,
+      "max_area": 4000.0
+    },
+    "Kharghar Sector 34C": {
+      "count": 1,
+      "avg_price": 13200000.0,
+      "median_price": 13200000.0,
+      "avg_price_per_sqft": 8655.74,
+      "median_price_per_sqft": 8655.74,
+      "min_area": 1525.0,
+      "max_area": 1525.0
+    },
+    "Kharodi": {
+      "count": 1,
+      "avg_price": 6500000.0,
+      "median_price": 6500000.0,
+      "avg_price_per_sqft": 14444.44,
+      "median_price_per_sqft": 14444.44,
+      "min_area": 450.0,
+      "max_area": 450.0
+    },
+    "Khopoli": {
+      "count": 4,
+      "avg_price": 7245250.0,
+      "median_price": 7333000.0,
+      "avg_price_per_sqft": 4154.59,
+      "median_price_per_sqft": 4155.21,
+      "min_area": 602.0,
+      "max_area": 2857.0
+    },
+    "Koldongri": {
+      "count": 1,
+      "avg_price": 26500000.0,
+      "median_price": 26500000.0,
+      "avg_price_per_sqft": 24090.91,
+      "median_price_per_sqft": 24090.91,
+      "min_area": 1100.0,
+      "max_area": 1100.0
+    },
+    "Kolshet Industrial Area": {
+      "count": 1,
+      "avg_price": 9500000.0,
+      "median_price": 9500000.0,
+      "avg_price_per_sqft": 11501.21,
+      "median_price_per_sqft": 11501.21,
+      "min_area": 826.0,
+      "max_area": 826.0
+    },
+    "Kolshet Road": {
+      "count": 9,
+      "avg_price": 11433333.33,
+      "median_price": 12100000.0,
+      "avg_price_per_sqft": 13952.14,
+      "median_price_per_sqft": 12352.94,
+      "min_area": 673.0,
+      "max_area": 1250.0
+    },
+    "Kondivita Road": {
+      "count": 1,
+      "avg_price": 11500000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 14375.0,
+      "median_price_per_sqft": 14375.0,
+      "min_area": 800.0,
+      "max_area": 800.0
+    },
+    "Kopar Khairane Sector 19A": {
+      "count": 3,
+      "avg_price": 11500000.0,
+      "median_price": 10000000.0,
+      "avg_price_per_sqft": 9821.43,
+      "median_price_per_sqft": 9659.09,
+      "min_area": 700.0,
+      "max_area": 1760.0
+    },
+    "Kopara": {
+      "count": 1,
+      "avg_price": 9000000.0,
+      "median_price": 9000000.0,
+      "avg_price_per_sqft": 7685.74,
+      "median_price_per_sqft": 7685.74,
+      "min_area": 1171.0,
+      "max_area": 1171.0
+    },
+    "Koparkhairane Station Road": {
+      "count": 6,
+      "avg_price": 10750000.0,
+      "median_price": 10250000.0,
+      "avg_price_per_sqft": 10214.31,
+      "median_price_per_sqft": 10172.41,
+      "min_area": 725.0,
+      "max_area": 1155.0
+    },
+    "Koper Khairane": {
+      "count": 24,
+      "avg_price": 10583333.33,
+      "median_price": 9500000.0,
+      "avg_price_per_sqft": 10629.0,
+      "median_price_per_sqft": 10483.97,
+      "min_area": 528.0,
+      "max_area": 1800.0
+    },
+    "Koproli": {
+      "count": 31,
+      "avg_price": 3748354.81,
+      "median_price": 4050000.0,
+      "avg_price_per_sqft": 5514.89,
+      "median_price_per_sqft": 5411.76,
+      "min_area": 460.0,
+      "max_area": 1100.0
+    },
+    "Krishanlal Marwah Marg": {
+      "count": 1,
+      "avg_price": 16000000.0,
+      "median_price": 16000000.0,
+      "avg_price_per_sqft": 17977.53,
+      "median_price_per_sqft": 17977.53,
+      "min_area": 890.0,
+      "max_area": 890.0
+    },
+    "Kulupwadi": {
+      "count": 1,
+      "avg_price": 14500000.0,
+      "median_price": 14500000.0,
+      "avg_price_per_sqft": 15263.16,
+      "median_price_per_sqft": 15263.16,
+      "min_area": 950.0,
+      "max_area": 950.0
+    },
+    "Kurla": {
+      "count": 20,
+      "avg_price": 10192749.75,
+      "median_price": 8690000.0,
+      "avg_price_per_sqft": 15508.32,
+      "median_price_per_sqft": 13550.82,
+      "min_area": 390.0,
+      "max_area": 1676.0
+    },
+    "Kurla East": {
+      "count": 1,
+      "avg_price": 11000000.0,
+      "median_price": 11000000.0,
+      "avg_price_per_sqft": 14666.67,
+      "median_price_per_sqft": 14666.67,
+      "min_area": 750.0,
+      "max_area": 750.0
+    },
+    "Kurla West": {
+      "count": 11,
+      "avg_price": 9040818.09,
+      "median_price": 9000000.0,
+      "avg_price_per_sqft": 10438.95,
+      "median_price_per_sqft": 10476.19,
+      "min_area": 410.0,
+      "max_area": 1350.0
+    },
+    "Link Road": {
+      "count": 2,
+      "avg_price": 13250000.0,
+      "median_price": 13250000.0,
+      "avg_price_per_sqft": 22013.89,
+      "median_price_per_sqft": 22013.89,
+      "min_area": 400.0,
+      "max_area": 900.0
+    },
+    "Lokhandwala": {
+      "count": 1,
+      "avg_price": 3800000.0,
+      "median_price": 3800000.0,
+      "avg_price_per_sqft": 4086.02,
+      "median_price_per_sqft": 4086.02,
+      "min_area": 930.0,
+      "max_area": 930.0
+    },
+    "Lokhandwala Township": {
+      "count": 1,
+      "avg_price": 10500000.0,
+      "median_price": 10500000.0,
+      "avg_price_per_sqft": 11666.67,
+      "median_price_per_sqft": 11666.67,
+      "min_area": 900.0,
+      "max_area": 900.0
+    },
+    "Lower Parel": {
+      "count": 9,
+      "avg_price": 102711111.11,
+      "median_price": 55000000.0,
+      "avg_price_per_sqft": 38081.34,
+      "median_price_per_sqft": 35324.34,
+      "min_area": 1040.0,
+      "max_area": 6381.0
+    },
+    "MG Road": {
+      "count": 1,
+      "avg_price": 18000000.0,
+      "median_price": 18000000.0,
+      "avg_price_per_sqft": 17142.86,
+      "median_price_per_sqft": 17142.86,
+      "min_area": 1050.0,
+      "max_area": 1050.0
+    },
+    "MHADA Colony 20": {
+      "count": 2,
+      "avg_price": 12050000.0,
+      "median_price": 12050000.0,
+      "avg_price_per_sqft": 12214.25,
+      "median_price_per_sqft": 12214.25,
+      "min_area": 885.0,
+      "max_area": 1014.0
+    },
+    "Magathane": {
+      "count": 33,
+      "avg_price": 19630303.03,
+      "median_price": 20500000.0,
+      "avg_price_per_sqft": 17265.99,
+      "median_price_per_sqft": 16752.14,
+      "min_area": 585.0,
+      "max_area": 1650.0
+    },
+    "Mahalaxmi": {
+      "count": 5,
+      "avg_price": 77000000.0,
+      "median_price": 75000000.0,
+      "avg_price_per_sqft": 45404.6,
+      "median_price_per_sqft": 43962.49,
+      "min_area": 550.0,
+      "max_area": 2710.0
+    },
+    "Maharashtra Nagar": {
+      "count": 1,
+      "avg_price": 6500000.0,
+      "median_price": 6500000.0,
+      "avg_price_per_sqft": 10655.74,
+      "median_price_per_sqft": 10655.74,
+      "min_area": 610.0,
+      "max_area": 610.0
+    },
+    "Mahatma Gandhi Road": {
+      "count": 1,
+      "avg_price": 24000000.0,
+      "median_price": 24000000.0,
+      "avg_price_per_sqft": 19200.0,
+      "median_price_per_sqft": 19200.0,
+      "min_area": 1250.0,
+      "max_area": 1250.0
+    },
+    "Mahim": {
+      "count": 2,
+      "avg_price": 49550000.0,
+      "median_price": 49550000.0,
+      "avg_price_per_sqft": 52728.44,
+      "median_price_per_sqft": 52728.44,
+      "min_area": 815.0,
+      "max_area": 1096.0
+    },
+    "Majiwada": {
+      "count": 10,
+      "avg_price": 8628600.0,
+      "median_price": 7497000.0,
+      "avg_price_per_sqft": 10735.13,
+      "median_price_per_sqft": 9952.61,
+      "min_area": 585.0,
+      "max_area": 1209.0
+    },
+    "Majiwada thane": {
+      "count": 5,
+      "avg_price": 13800000.0,
+      "median_price": 12800000.0,
+      "avg_price_per_sqft": 10441.5,
+      "median_price_per_sqft": 10714.29,
+      "min_area": 1100.0,
+      "max_area": 1600.0
+    },
+    "Malabar Hill": {
+      "count": 1,
+      "avg_price": 55000000.0,
+      "median_price": 55000000.0,
+      "avg_price_per_sqft": 53398.06,
+      "median_price_per_sqft": 53398.06,
+      "min_area": 1030.0,
+      "max_area": 1030.0
+    },
+    "Malad": {
+      "count": 1,
+      "avg_price": 10000000.0,
+      "median_price": 10000000.0,
+      "avg_price_per_sqft": 15384.62,
+      "median_price_per_sqft": 15384.62,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Malad East": {
+      "count": 85,
+      "avg_price": 20898235.29,
+      "median_price": 20000000.0,
+      "avg_price_per_sqft": 16901.66,
+      "median_price_per_sqft": 15789.47,
+      "min_area": 356.0,
+      "max_area": 4240.0
+    },
+    "Malad West": {
+      "count": 163,
+      "avg_price": 14215637.98,
+      "median_price": 13300000.0,
+      "avg_price_per_sqft": 15750.9,
+      "median_price_per_sqft": 14166.67,
+      "min_area": 200.0,
+      "max_area": 1850.0
+    },
+    "Manpada": {
+      "count": 3,
+      "avg_price": 19400000.0,
+      "median_price": 15800000.0,
+      "avg_price_per_sqft": 13308.0,
+      "median_price_per_sqft": 11924.53,
+      "min_area": 1325.0,
+      "max_area": 1552.0
+    },
+    "Manpada near Tiku ji ni wadi": {
+      "count": 1,
+      "avg_price": 17500000.0,
+      "median_price": 17500000.0,
+      "avg_price_per_sqft": 7291.67,
+      "median_price_per_sqft": 7291.67,
+      "min_area": 2400.0,
+      "max_area": 2400.0
+    },
+    "Manvel pada Road": {
+      "count": 1,
+      "avg_price": 4000000.0,
+      "median_price": 4000000.0,
+      "avg_price_per_sqft": 5228.76,
+      "median_price_per_sqft": 5228.76,
+      "min_area": 765.0,
+      "max_area": 765.0
+    },
+    "Marine Lines": {
+      "count": 1,
+      "avg_price": 70000000.0,
+      "median_price": 70000000.0,
+      "avg_price_per_sqft": 53110.77,
+      "median_price_per_sqft": 53110.77,
+      "min_area": 1318.0,
+      "max_area": 1318.0
+    },
+    "Marol": {
+      "count": 4,
+      "avg_price": 16024999.75,
+      "median_price": 16449999.5,
+      "avg_price_per_sqft": 15201.85,
+      "median_price_per_sqft": 13418.86,
+      "min_area": 860.0,
+      "max_area": 1411.0
+    },
+    "Matunga": {
+      "count": 6,
+      "avg_price": 40916666.67,
+      "median_price": 42500000.0,
+      "avg_price_per_sqft": 43594.2,
+      "median_price_per_sqft": 44017.09,
+      "min_area": 667.0,
+      "max_area": 1170.0
+    },
+    "Mira Bhayandar": {
+      "count": 1,
+      "avg_price": 5200000.0,
+      "median_price": 5200000.0,
+      "avg_price_per_sqft": 8965.52,
+      "median_price_per_sqft": 8965.52,
+      "min_area": 580.0,
+      "max_area": 580.0
+    },
+    "Mira Road": {
+      "count": 4,
+      "avg_price": 9087500.0,
+      "median_price": 7175000.0,
+      "avg_price_per_sqft": 8597.58,
+      "median_price_per_sqft": 8464.54,
+      "min_area": 650.0,
+      "max_area": 1944.0
+    },
+    "Mira Road East": {
+      "count": 390,
+      "avg_price": 8224102.53,
+      "median_price": 7651000.0,
+      "avg_price_per_sqft": 9932.15,
+      "median_price_per_sqft": 8520.83,
+      "min_area": 220.0,
+      "max_area": 2963.0
+    },
+    "Mira Road and Beyond": {
+      "count": 20,
+      "avg_price": 5730000.0,
+      "median_price": 5900000.0,
+      "avg_price_per_sqft": 8081.9,
+      "median_price_per_sqft": 6915.46,
+      "min_area": 320.0,
+      "max_area": 1760.0
+    },
+    "Morya Nagar": {
+      "count": 2,
+      "avg_price": 3500000.0,
+      "median_price": 3500000.0,
+      "avg_price_per_sqft": 4739.94,
+      "median_price_per_sqft": 4739.94,
+      "min_area": 620.0,
+      "max_area": 890.0
+    },
+    "Mulund": {
+      "count": 6,
+      "avg_price": 19366666.67,
+      "median_price": 19600000.0,
+      "avg_price_per_sqft": 14906.29,
+      "median_price_per_sqft": 15134.2,
+      "min_area": 1180.0,
+      "max_area": 1412.0
+    },
+    "Mulund East": {
+      "count": 26,
+      "avg_price": 13434615.35,
+      "median_price": 12500000.0,
+      "avg_price_per_sqft": 18622.82,
+      "median_price_per_sqft": 17417.58,
+      "min_area": 345.0,
+      "max_area": 1700.0
+    },
+    "Mulund West": {
+      "count": 76,
+      "avg_price": 20592105.22,
+      "median_price": 19950000.0,
+      "avg_price_per_sqft": 21133.53,
+      "median_price_per_sqft": 19857.14,
+      "min_area": 417.0,
+      "max_area": 2600.0
+    },
+    "Mumbai Agra National Highway": {
+      "count": 2,
+      "avg_price": 10000000.0,
+      "median_price": 10000000.0,
+      "avg_price_per_sqft": 8918.4,
+      "median_price_per_sqft": 8918.4,
+      "min_area": 702.0,
+      "max_area": 1400.0
+    },
+    "Mumbai Central": {
+      "count": 5,
+      "avg_price": 3600000.0,
+      "median_price": 3300000.0,
+      "avg_price_per_sqft": 5225.97,
+      "median_price_per_sqft": 5333.33,
+      "min_area": 525.0,
+      "max_area": 1115.0
+    },
+    "Mumbai Highway": {
+      "count": 5,
+      "avg_price": 13500000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 11170.9,
+      "median_price_per_sqft": 12641.38,
+      "min_area": 785.0,
+      "max_area": 1503.0
+    },
+    "Mumbai Nashik Expressway": {
+      "count": 2,
+      "avg_price": 3750000.0,
+      "median_price": 3750000.0,
+      "avg_price_per_sqft": 7923.41,
+      "median_price_per_sqft": 7923.41,
+      "min_area": 457.0,
+      "max_area": 500.0
+    },
+    "Nahur": {
+      "count": 2,
+      "avg_price": 34550000.0,
+      "median_price": 34550000.0,
+      "avg_price_per_sqft": 24591.75,
+      "median_price_per_sqft": 24591.75,
+      "min_area": 1237.0,
+      "max_area": 1650.0
+    },
+    "Naigaon East": {
+      "count": 55,
+      "avg_price": 2900727.27,
+      "median_price": 2800000.0,
+      "avg_price_per_sqft": 5229.82,
+      "median_price_per_sqft": 5000.0,
+      "min_area": 252.0,
+      "max_area": 1252.0
+    },
+    "Nala Sopara": {
+      "count": 172,
+      "avg_price": 2914104.65,
+      "median_price": 2550000.0,
+      "avg_price_per_sqft": 4509.45,
+      "median_price_per_sqft": 4406.78,
+      "min_area": 415.0,
+      "max_area": 1300.0
+    },
+    "Nalasopara East": {
+      "count": 16,
+      "avg_price": 3842187.5,
+      "median_price": 3650000.0,
+      "avg_price_per_sqft": 5092.14,
+      "median_price_per_sqft": 5000.0,
+      "min_area": 365.0,
+      "max_area": 1050.0
+    },
+    "Nalasopara West": {
+      "count": 26,
+      "avg_price": 2536884.62,
+      "median_price": 2500000.0,
+      "avg_price_per_sqft": 4471.42,
+      "median_price_per_sqft": 4285.71,
+      "min_area": 355.0,
+      "max_area": 850.0
+    },
+    "Napeansea Road": {
+      "count": 4,
+      "avg_price": 94750000.0,
+      "median_price": 93250000.0,
+      "avg_price_per_sqft": 52460.86,
+      "median_price_per_sqft": 47852.05,
+      "min_area": 1340.0,
+      "max_area": 3313.0
+    },
+    "Natakwala Lane": {
+      "count": 1,
+      "avg_price": 17000000.0,
+      "median_price": 17000000.0,
+      "avg_price_per_sqft": 17017.02,
+      "median_price_per_sqft": 17017.02,
+      "min_area": 999.0,
+      "max_area": 999.0
+    },
+    "Navi Basti": {
+      "count": 6,
+      "avg_price": 8944333.33,
+      "median_price": 8576500.0,
+      "avg_price_per_sqft": 8146.24,
+      "median_price_per_sqft": 7242.44,
+      "min_area": 400.0,
+      "max_area": 1482.0
+    },
+    "Neral": {
+      "count": 4,
+      "avg_price": 2507000.0,
+      "median_price": 2087500.0,
+      "avg_price_per_sqft": 3480.92,
+      "median_price_per_sqft": 3156.89,
+      "min_area": 630.0,
+      "max_area": 860.0
+    },
+    "Nere": {
+      "count": 1,
+      "avg_price": 2600000.0,
+      "median_price": 2600000.0,
+      "avg_price_per_sqft": 3768.12,
+      "median_price_per_sqft": 3768.12,
+      "min_area": 690.0,
+      "max_area": 690.0
+    },
+    "Nerul": {
+      "count": 21,
+      "avg_price": 28847619.05,
+      "median_price": 23500000.0,
+      "avg_price_per_sqft": 16474.18,
+      "median_price_per_sqft": 13849.77,
+      "min_area": 650.0,
+      "max_area": 2703.0
+    },
+    "Nilje Gaon": {
+      "count": 2,
+      "avg_price": 3800000.0,
+      "median_price": 3800000.0,
+      "avg_price_per_sqft": 4869.38,
+      "median_price_per_sqft": 4869.38,
+      "min_area": 693.0,
+      "max_area": 864.0
+    },
+    "Off Nepean Sea Road": {
+      "count": 1,
+      "avg_price": 40000000.0,
+      "median_price": 40000000.0,
+      "avg_price_per_sqft": 66666.67,
+      "median_price_per_sqft": 66666.67,
+      "min_area": 600.0,
+      "max_area": 600.0
+    },
+    "Off Shimpoli road": {
+      "count": 1,
+      "avg_price": 20500000.0,
+      "median_price": 20500000.0,
+      "avg_price_per_sqft": 22777.78,
+      "median_price_per_sqft": 22777.78,
+      "min_area": 900.0,
+      "max_area": 900.0
+    },
+    "Oshiwara Police Station Road": {
+      "count": 1,
+      "avg_price": 100000000.0,
+      "median_price": 100000000.0,
+      "avg_price_per_sqft": 30303.03,
+      "median_price_per_sqft": 30303.03,
+      "min_area": 3300.0,
+      "max_area": 3300.0
+    },
+    "Owale": {
+      "count": 2,
+      "avg_price": 4800000.0,
+      "median_price": 4800000.0,
+      "avg_price_per_sqft": 10025.95,
+      "median_price_per_sqft": 10025.95,
+      "min_area": 427.0,
+      "max_area": 555.0
+    },
+    "PARSIK NAGAR": {
+      "count": 7,
+      "avg_price": 7171428.57,
+      "median_price": 7500000.0,
+      "avg_price_per_sqft": 8284.51,
+      "median_price_per_sqft": 7922.08,
+      "min_area": 630.0,
+      "max_area": 1050.0
+    },
+    "Padle Gaon": {
+      "count": 1,
+      "avg_price": 4260000.0,
+      "median_price": 4260000.0,
+      "avg_price_per_sqft": 6129.5,
+      "median_price_per_sqft": 6129.5,
+      "min_area": 695.0,
+      "max_area": 695.0
+    },
+    "Palava": {
+      "count": 8,
+      "avg_price": 5793750.0,
+      "median_price": 6025000.0,
+      "avg_price_per_sqft": 5562.42,
+      "median_price_per_sqft": 5580.81,
+      "min_area": 650.0,
+      "max_area": 1350.0
+    },
+    "Palghar": {
+      "count": 11,
+      "avg_price": 2954272.64,
+      "median_price": 3049000.0,
+      "avg_price_per_sqft": 4217.03,
+      "median_price_per_sqft": 3841.61,
+      "min_area": 387.0,
+      "max_area": 967.0
+    },
+    "Pali Hill": {
+      "count": 1,
+      "avg_price": 35000000.0,
+      "median_price": 35000000.0,
+      "avg_price_per_sqft": 43750.0,
+      "median_price_per_sqft": 43750.0,
+      "min_area": 800.0,
+      "max_area": 800.0
+    },
+    "Palidevad": {
+      "count": 1,
+      "avg_price": 2800000.0,
+      "median_price": 2800000.0,
+      "avg_price_per_sqft": 5090.91,
+      "median_price_per_sqft": 5090.91,
+      "min_area": 550.0,
+      "max_area": 550.0
+    },
+    "Palm Beach": {
+      "count": 1,
+      "avg_price": 16500000.0,
+      "median_price": 16500000.0,
+      "avg_price_per_sqft": 14042.55,
+      "median_price_per_sqft": 14042.55,
+      "min_area": 1175.0,
+      "max_area": 1175.0
+    },
+    "Panch Pakhadi": {
+      "count": 2,
+      "avg_price": 11000000.0,
+      "median_price": 11000000.0,
+      "avg_price_per_sqft": 15536.5,
+      "median_price_per_sqft": 15536.5,
+      "min_area": 448.0,
+      "max_area": 971.0
+    },
+    "Pandurangwadi": {
+      "count": 1,
+      "avg_price": 11500000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 17692.31,
+      "median_price_per_sqft": 17692.31,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Pant Nagar": {
+      "count": 3,
+      "avg_price": 9833333.33,
+      "median_price": 8000000.0,
+      "avg_price_per_sqft": 16468.69,
+      "median_price_per_sqft": 19480.52,
+      "min_area": 385.0,
+      "max_area": 806.0
+    },
+    "Panvel": {
+      "count": 136,
+      "avg_price": 7890823.51,
+      "median_price": 8000000.0,
+      "avg_price_per_sqft": 7976.93,
+      "median_price_per_sqft": 7247.11,
+      "min_area": 385.0,
+      "max_area": 3200.0
+    },
+    "Parel": {
+      "count": 27,
+      "avg_price": 52288888.89,
+      "median_price": 47900000.0,
+      "avg_price_per_sqft": 39364.69,
+      "median_price_per_sqft": 41631.27,
+      "min_area": 510.0,
+      "max_area": 2670.0
+    },
+    "Parel Village": {
+      "count": 1,
+      "avg_price": 17000000.0,
+      "median_price": 17000000.0,
+      "avg_price_per_sqft": 25373.13,
+      "median_price_per_sqft": 25373.13,
+      "min_area": 670.0,
+      "max_area": 670.0
+    },
+    "Patel Nagar": {
+      "count": 1,
+      "avg_price": 11500000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 17692.31,
+      "median_price_per_sqft": 17692.31,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Patlipada": {
+      "count": 1,
+      "avg_price": 19000000.0,
+      "median_price": 19000000.0,
+      "avg_price_per_sqft": 18095.24,
+      "median_price_per_sqft": 18095.24,
+      "min_area": 1050.0,
+      "max_area": 1050.0
+    },
+    "Peddar Road": {
+      "count": 1,
+      "avg_price": 100000000.0,
+      "median_price": 100000000.0,
+      "avg_price_per_sqft": 50000.0,
+      "median_price_per_sqft": 50000.0,
+      "min_area": 2000.0,
+      "max_area": 2000.0
+    },
+    "Petali": {
+      "count": 2,
+      "avg_price": 3800000.0,
+      "median_price": 3800000.0,
+      "avg_price_per_sqft": 7317.18,
+      "median_price_per_sqft": 7317.18,
+      "min_area": 422.0,
+      "max_area": 675.0
+    },
+    "Phase 2": {
+      "count": 1,
+      "avg_price": 35500000.0,
+      "median_price": 35500000.0,
+      "avg_price_per_sqft": 10441.18,
+      "median_price_per_sqft": 10441.18,
+      "min_area": 3400.0,
+      "max_area": 3400.0
+    },
+    "Poddar Road": {
+      "count": 1,
+      "avg_price": 59400000.0,
+      "median_price": 59400000.0,
+      "avg_price_per_sqft": 55000.0,
+      "median_price_per_sqft": 55000.0,
+      "min_area": 1080.0,
+      "max_area": 1080.0
+    },
+    "Pokharan Road": {
+      "count": 1,
+      "avg_price": 13200000.0,
+      "median_price": 13200000.0,
+      "avg_price_per_sqft": 17187.5,
+      "median_price_per_sqft": 17187.5,
+      "min_area": 768.0,
+      "max_area": 768.0
+    },
+    "Pokhran 2": {
+      "count": 3,
+      "avg_price": 10425000.0,
+      "median_price": 10500000.0,
+      "avg_price_per_sqft": 14208.96,
+      "median_price_per_sqft": 13772.73,
+      "min_area": 550.0,
+      "max_area": 900.0
+    },
+    "Pokhran Road No 2": {
+      "count": 1,
+      "avg_price": 12800000.0,
+      "median_price": 12800000.0,
+      "avg_price_per_sqft": 17066.67,
+      "median_price_per_sqft": 17066.67,
+      "min_area": 750.0,
+      "max_area": 750.0
+    },
+    "Poonam Sagar Complex": {
+      "count": 1,
+      "avg_price": 8500000.0,
+      "median_price": 8500000.0,
+      "avg_price_per_sqft": 8585.86,
+      "median_price_per_sqft": 8585.86,
+      "min_area": 990.0,
+      "max_area": 990.0
+    },
+    "Powai": {
+      "count": 141,
+      "avg_price": 23041134.74,
+      "median_price": 19500000.0,
+      "avg_price_per_sqft": 21655.72,
+      "median_price_per_sqft": 18502.2,
+      "min_area": 225.0,
+      "max_area": 2500.0
+    },
+    "Powai Lake": {
+      "count": 4,
+      "avg_price": 7850000.0,
+      "median_price": 4500000.0,
+      "avg_price_per_sqft": 8220.94,
+      "median_price_per_sqft": 5084.75,
+      "min_area": 700.0,
+      "max_area": 1050.0
+    },
+    "Prabhadevi": {
+      "count": 8,
+      "avg_price": 46099999.88,
+      "median_price": 40000000.0,
+      "avg_price_per_sqft": 33710.34,
+      "median_price_per_sqft": 30331.44,
+      "min_area": 310.0,
+      "max_area": 3150.0
+    },
+    "Rajendra Nagar": {
+      "count": 8,
+      "avg_price": 17287500.0,
+      "median_price": 18900000.0,
+      "avg_price_per_sqft": 16916.36,
+      "median_price_per_sqft": 16521.74,
+      "min_area": 376.0,
+      "max_area": 1350.0
+    },
+    "Ramdev Park": {
+      "count": 1,
+      "avg_price": 5100000.0,
+      "median_price": 5100000.0,
+      "avg_price_per_sqft": 13315.93,
+      "median_price_per_sqft": 13315.93,
+      "min_area": 383.0,
+      "max_area": 383.0
+    },
+    "Ranjanpada": {
+      "count": 1,
+      "avg_price": 9500000.0,
+      "median_price": 9500000.0,
+      "avg_price_per_sqft": 8920.19,
+      "median_price_per_sqft": 8920.19,
+      "min_area": 1065.0,
+      "max_area": 1065.0
+    },
+    "Rasayani": {
+      "count": 1,
+      "avg_price": 2800000.0,
+      "median_price": 2800000.0,
+      "avg_price_per_sqft": 5809.13,
+      "median_price_per_sqft": 5809.13,
+      "min_area": 482.0,
+      "max_area": 482.0
+    },
+    "Rawal Pada": {
+      "count": 1,
+      "avg_price": 18500000.0,
+      "median_price": 18500000.0,
+      "avg_price_per_sqft": 17585.55,
+      "median_price_per_sqft": 17585.55,
+      "min_area": 1052.0,
+      "max_area": 1052.0
+    },
+    "Roadpali": {
+      "count": 4,
+      "avg_price": 8287500.0,
+      "median_price": 4325000.0,
+      "avg_price_per_sqft": 7921.81,
+      "median_price_per_sqft": 6953.24,
+      "min_area": 500.0,
+      "max_area": 1771.0
+    },
+    "Rustomjee Global City": {
+      "count": 1,
+      "avg_price": 3100000.0,
+      "median_price": 3100000.0,
+      "avg_price_per_sqft": 6888.89,
+      "median_price_per_sqft": 6888.89,
+      "min_area": 450.0,
+      "max_area": 450.0
+    },
+    "Rutu Enclave": {
+      "count": 1,
+      "avg_price": 3400000.0,
+      "median_price": 3400000.0,
+      "avg_price_per_sqft": 4657.53,
+      "median_price_per_sqft": 4657.53,
+      "min_area": 730.0,
+      "max_area": 730.0
+    },
+    "Sahkar Nagar": {
+      "count": 1,
+      "avg_price": 13799999.0,
+      "median_price": 13799999.0,
+      "avg_price_per_sqft": 13529.41,
+      "median_price_per_sqft": 13529.41,
+      "min_area": 1020.0,
+      "max_area": 1020.0
+    },
+    "Sainath Nagar": {
+      "count": 6,
+      "avg_price": 18100000.0,
+      "median_price": 19000000.0,
+      "avg_price_per_sqft": 11784.49,
+      "median_price_per_sqft": 11842.11,
+      "min_area": 1100.0,
+      "max_area": 1900.0
+    },
+    "Saki Naka": {
+      "count": 1,
+      "avg_price": 18500000.0,
+      "median_price": 18500000.0,
+      "avg_price_per_sqft": 14895.33,
+      "median_price_per_sqft": 14895.33,
+      "min_area": 1242.0,
+      "max_area": 1242.0
+    },
+    "Samata Nagar Thakur Village": {
+      "count": 4,
+      "avg_price": 30500000.0,
+      "median_price": 30500000.0,
+      "avg_price_per_sqft": 19351.73,
+      "median_price_per_sqft": 19166.41,
+      "min_area": 1350.0,
+      "max_area": 1835.0
+    },
+    "Samata nagar": {
+      "count": 3,
+      "avg_price": 23000000.0,
+      "median_price": 23500000.0,
+      "avg_price_per_sqft": 20069.93,
+      "median_price_per_sqft": 20000.0,
+      "min_area": 1050.0,
+      "max_area": 1300.0
+    },
+    "Sanpada": {
+      "count": 32,
+      "avg_price": 17759343.75,
+      "median_price": 17500000.0,
+      "avg_price_per_sqft": 13927.28,
+      "median_price_per_sqft": 13618.18,
+      "min_area": 506.0,
+      "max_area": 3465.0
+    },
+    "Santacruz East": {
+      "count": 22,
+      "avg_price": 17045454.55,
+      "median_price": 12750000.0,
+      "avg_price_per_sqft": 19790.37,
+      "median_price_per_sqft": 20384.62,
+      "min_area": 350.0,
+      "max_area": 5500.0
+    },
+    "Santacruz West": {
+      "count": 13,
+      "avg_price": 47953846.08,
+      "median_price": 48000000.0,
+      "avg_price_per_sqft": 36129.07,
+      "median_price_per_sqft": 39000.0,
+      "min_area": 600.0,
+      "max_area": 3500.0
+    },
+    "Sea Face": {
+      "count": 1,
+      "avg_price": 25000000.0,
+      "median_price": 25000000.0,
+      "avg_price_per_sqft": 10000.0,
+      "median_price_per_sqft": 10000.0,
+      "min_area": 2500.0,
+      "max_area": 2500.0
+    },
+    "Seawoods": {
+      "count": 44,
+      "avg_price": 21961363.64,
+      "median_price": 19050000.0,
+      "avg_price_per_sqft": 15309.3,
+      "median_price_per_sqft": 14803.2,
+      "min_area": 600.0,
+      "max_area": 4250.0
+    },
+    "Sector 10": {
+      "count": 6,
+      "avg_price": 10183333.33,
+      "median_price": 10250000.0,
+      "avg_price_per_sqft": 8967.15,
+      "median_price_per_sqft": 9141.38,
+      "min_area": 860.0,
+      "max_area": 1550.0
+    },
+    "Sector 10 Kamothe": {
+      "count": 1,
+      "avg_price": 11500000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 7931.03,
+      "median_price_per_sqft": 7931.03,
+      "min_area": 1450.0,
+      "max_area": 1450.0
+    },
+    "Sector 10 Khanda Colony": {
+      "count": 1,
+      "avg_price": 14000000.0,
+      "median_price": 14000000.0,
+      "avg_price_per_sqft": 9150.33,
+      "median_price_per_sqft": 9150.33,
+      "min_area": 1530.0,
+      "max_area": 1530.0
+    },
+    "Sector 11 Belapur": {
+      "count": 1,
+      "avg_price": 11500000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 9729.27,
+      "median_price_per_sqft": 9729.27,
+      "min_area": 1182.0,
+      "max_area": 1182.0
+    },
+    "Sector 11 Kamothe": {
+      "count": 1,
+      "avg_price": 4400000.0,
+      "median_price": 4400000.0,
+      "avg_price_per_sqft": 8301.89,
+      "median_price_per_sqft": 8301.89,
+      "min_area": 530.0,
+      "max_area": 530.0
+    },
+    "Sector 11 Kharghar": {
+      "count": 2,
+      "avg_price": 9500000.0,
+      "median_price": 9500000.0,
+      "avg_price_per_sqft": 8497.18,
+      "median_price_per_sqft": 8497.18,
+      "min_area": 900.0,
+      "max_area": 1302.0
+    },
+    "Sector 12 A": {
+      "count": 1,
+      "avg_price": 13200000.0,
+      "median_price": 13200000.0,
+      "avg_price_per_sqft": 10476.19,
+      "median_price_per_sqft": 10476.19,
+      "min_area": 1260.0,
+      "max_area": 1260.0
+    },
+    "Sector 12 Kharghar": {
+      "count": 3,
+      "avg_price": 10866666.67,
+      "median_price": 12600000.0,
+      "avg_price_per_sqft": 10062.43,
+      "median_price_per_sqft": 10956.52,
+      "min_area": 650.0,
+      "max_area": 1300.0
+    },
+    "Sector 15": {
+      "count": 3,
+      "avg_price": 10466666.67,
+      "median_price": 12700000.0,
+      "avg_price_per_sqft": 10718.35,
+      "median_price_per_sqft": 10714.29,
+      "min_area": 560.0,
+      "max_area": 1251.0
+    },
+    "Sector 15 Kharghar": {
+      "count": 3,
+      "avg_price": 10566666.67,
+      "median_price": 12700000.0,
+      "avg_price_per_sqft": 10915.66,
+      "median_price_per_sqft": 10743.8,
+      "min_area": 560.0,
+      "max_area": 1210.0
+    },
+    "Sector 17 Ulwe": {
+      "count": 26,
+      "avg_price": 7965384.58,
+      "median_price": 6950000.0,
+      "avg_price_per_sqft": 7971.23,
+      "median_price_per_sqft": 7898.05,
+      "min_area": 350.0,
+      "max_area": 1665.0
+    },
+    "Sector 18": {
+      "count": 3,
+      "avg_price": 13500000.0,
+      "median_price": 14000000.0,
+      "avg_price_per_sqft": 10369.45,
+      "median_price_per_sqft": 10502.28,
+      "min_area": 1095.0,
+      "max_area": 1500.0
+    },
+    "Sector 18 Kamothe": {
+      "count": 3,
+      "avg_price": 6916666.67,
+      "median_price": 6250000.0,
+      "avg_price_per_sqft": 7931.46,
+      "median_price_per_sqft": 7394.37,
+      "min_area": 625.0,
+      "max_area": 1420.0
+    },
+    "Sector 18 Kharghar": {
+      "count": 8,
+      "avg_price": 12250000.0,
+      "median_price": 13500000.0,
+      "avg_price_per_sqft": 10182.96,
+      "median_price_per_sqft": 10838.76,
+      "min_area": 1016.0,
+      "max_area": 1455.0
+    },
+    "Sector 19 Kamothe": {
+      "count": 1,
+      "avg_price": 8700000.0,
+      "median_price": 8700000.0,
+      "avg_price_per_sqft": 7500.0,
+      "median_price_per_sqft": 7500.0,
+      "min_area": 1160.0,
+      "max_area": 1160.0
+    },
+    "Sector 19 Kharghar": {
+      "count": 10,
+      "avg_price": 8250000.0,
+      "median_price": 7850000.0,
+      "avg_price_per_sqft": 8124.2,
+      "median_price_per_sqft": 8169.43,
+      "min_area": 635.0,
+      "max_area": 1340.0
+    },
+    "Sector 19 Nerul": {
+      "count": 1,
+      "avg_price": 6500000.0,
+      "median_price": 6500000.0,
+      "avg_price_per_sqft": 13000.0,
+      "median_price_per_sqft": 13000.0,
+      "min_area": 500.0,
+      "max_area": 500.0
+    },
+    "Sector 19A Nerul": {
+      "count": 1,
+      "avg_price": 7800000.0,
+      "median_price": 7800000.0,
+      "avg_price_per_sqft": 13000.0,
+      "median_price_per_sqft": 13000.0,
+      "min_area": 600.0,
+      "max_area": 600.0
+    },
+    "Sector 2 Ulwe": {
+      "count": 1,
+      "avg_price": 7600000.0,
+      "median_price": 7600000.0,
+      "avg_price_per_sqft": 7203.79,
+      "median_price_per_sqft": 7203.79,
+      "min_area": 1055.0,
+      "max_area": 1055.0
+    },
+    "Sector 20 Kamothe": {
+      "count": 3,
+      "avg_price": 5600000.0,
+      "median_price": 5000000.0,
+      "avg_price_per_sqft": 7542.41,
+      "median_price_per_sqft": 7368.42,
+      "min_area": 475.0,
+      "max_area": 1256.0
+    },
+    "Sector 20 Kharghar": {
+      "count": 23,
+      "avg_price": 8682608.7,
+      "median_price": 8000000.0,
+      "avg_price_per_sqft": 8646.41,
+      "median_price_per_sqft": 8387.1,
+      "min_area": 416.0,
+      "max_area": 1985.0
+    },
+    "Sector 21 Kamothe": {
+      "count": 7,
+      "avg_price": 7071428.57,
+      "median_price": 5600000.0,
+      "avg_price_per_sqft": 7867.7,
+      "median_price_per_sqft": 7903.23,
+      "min_area": 600.0,
+      "max_area": 1450.0
+    },
+    "Sector 21 Kharghar": {
+      "count": 2,
+      "avg_price": 5950000.0,
+      "median_price": 5950000.0,
+      "avg_price_per_sqft": 6923.81,
+      "median_price_per_sqft": 6923.81,
+      "min_area": 350.0,
+      "max_area": 1500.0
+    },
+    "Sector 21 Ulwe": {
+      "count": 1,
+      "avg_price": 7200000.0,
+      "median_price": 7200000.0,
+      "avg_price_per_sqft": 7563.03,
+      "median_price_per_sqft": 7563.03,
+      "min_area": 952.0,
+      "max_area": 952.0
+    },
+    "Sector 22 Kamothe": {
+      "count": 6,
+      "avg_price": 5933333.33,
+      "median_price": 4900000.0,
+      "avg_price_per_sqft": 7798.68,
+      "median_price_per_sqft": 7902.44,
+      "min_area": 410.0,
+      "max_area": 1560.0
+    },
+    "Sector 23 Ulwe": {
+      "count": 3,
+      "avg_price": 4829333.33,
+      "median_price": 4900000.0,
+      "avg_price_per_sqft": 6169.23,
+      "median_price_per_sqft": 5769.23,
+      "min_area": 650.0,
+      "max_area": 1040.0
+    },
+    "Sector 30": {
+      "count": 1,
+      "avg_price": 5500000.0,
+      "median_price": 5500000.0,
+      "avg_price_per_sqft": 8461.54,
+      "median_price_per_sqft": 8461.54,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Sector 30 Kharghar": {
+      "count": 3,
+      "avg_price": 11166666.67,
+      "median_price": 4500000.0,
+      "avg_price_per_sqft": 8074.68,
+      "median_price_per_sqft": 7462.69,
+      "min_area": 603.0,
+      "max_area": 2200.0
+    },
+    "Sector 35G": {
+      "count": 2,
+      "avg_price": 10000000.0,
+      "median_price": 10000000.0,
+      "avg_price_per_sqft": 9343.81,
+      "median_price_per_sqft": 9343.81,
+      "min_area": 1065.0,
+      "max_area": 1075.0
+    },
+    "Sector 35I Kharghar": {
+      "count": 4,
+      "avg_price": 9025000.0,
+      "median_price": 8800000.0,
+      "avg_price_per_sqft": 9624.83,
+      "median_price_per_sqft": 9448.13,
+      "min_area": 735.0,
+      "max_area": 1227.0
+    },
+    "Sector 36 Kamothe": {
+      "count": 1,
+      "avg_price": 4800000.0,
+      "median_price": 4800000.0,
+      "avg_price_per_sqft": 8000.0,
+      "median_price_per_sqft": 8000.0,
+      "min_area": 600.0,
+      "max_area": 600.0
+    },
+    "Sector 36 Kharghar": {
+      "count": 5,
+      "avg_price": 8300000.0,
+      "median_price": 8500000.0,
+      "avg_price_per_sqft": 7606.78,
+      "median_price_per_sqft": 7666.67,
+      "min_area": 600.0,
+      "max_area": 1500.0
+    },
+    "Sector 5": {
+      "count": 1,
+      "avg_price": 10500000.0,
+      "median_price": 10500000.0,
+      "avg_price_per_sqft": 9242.96,
+      "median_price_per_sqft": 9242.96,
+      "min_area": 1136.0,
+      "max_area": 1136.0
+    },
+    "Sector 5 Ulwe": {
+      "count": 5,
+      "avg_price": 7540000.0,
+      "median_price": 9000000.0,
+      "avg_price_per_sqft": 6785.02,
+      "median_price_per_sqft": 7258.06,
+      "min_area": 650.0,
+      "max_area": 1260.0
+    },
+    "Sector 58A Seawoods Navi Mumbai": {
+      "count": 1,
+      "avg_price": 53000000.0,
+      "median_price": 53000000.0,
+      "avg_price_per_sqft": 27894.74,
+      "median_price_per_sqft": 27894.74,
+      "min_area": 1900.0,
+      "max_area": 1900.0
+    },
+    "Sector 6": {
+      "count": 1,
+      "avg_price": 11900000.0,
+      "median_price": 11900000.0,
+      "avg_price_per_sqft": 7507.89,
+      "median_price_per_sqft": 7507.89,
+      "min_area": 1585.0,
+      "max_area": 1585.0
+    },
+    "Sector 7 Kharghar": {
+      "count": 1,
+      "avg_price": 17500000.0,
+      "median_price": 17500000.0,
+      "avg_price_per_sqft": 10736.2,
+      "median_price_per_sqft": 10736.2,
+      "min_area": 1630.0,
+      "max_area": 1630.0
+    },
+    "Sector 9 Airoli": {
+      "count": 1,
+      "avg_price": 9800000.0,
+      "median_price": 9800000.0,
+      "avg_price_per_sqft": 11225.66,
+      "median_price_per_sqft": 11225.66,
+      "min_area": 873.0,
+      "max_area": 873.0
+    },
+    "Sector-12 Kamothe": {
+      "count": 2,
+      "avg_price": 7600000.0,
+      "median_price": 7600000.0,
+      "avg_price_per_sqft": 8899.31,
+      "median_price_per_sqft": 8899.31,
+      "min_area": 380.0,
+      "max_area": 1150.0
+    },
+    "Sector-13 Kharghar": {
+      "count": 1,
+      "avg_price": 10500000.0,
+      "median_price": 10500000.0,
+      "avg_price_per_sqft": 7664.23,
+      "median_price_per_sqft": 7664.23,
+      "min_area": 1370.0,
+      "max_area": 1370.0
+    },
+    "Sector-18 Ulwe": {
+      "count": 13,
+      "avg_price": 9561538.46,
+      "median_price": 9200000.0,
+      "avg_price_per_sqft": 8000.05,
+      "median_price_per_sqft": 7829.79,
+      "min_area": 650.0,
+      "max_area": 1655.0
+    },
+    "Sector-24 Kamothe": {
+      "count": 1,
+      "avg_price": 4000000.0,
+      "median_price": 4000000.0,
+      "avg_price_per_sqft": 6451.61,
+      "median_price_per_sqft": 6451.61,
+      "min_area": 620.0,
+      "max_area": 620.0
+    },
+    "Sector-26 Taloja": {
+      "count": 1,
+      "avg_price": 2100000.0,
+      "median_price": 2100000.0,
+      "avg_price_per_sqft": 4666.67,
+      "median_price_per_sqft": 4666.67,
+      "min_area": 450.0,
+      "max_area": 450.0
+    },
+    "Sector-3 Ulwe": {
+      "count": 8,
+      "avg_price": 14474999.88,
+      "median_price": 12699999.5,
+      "avg_price_per_sqft": 8356.93,
+      "median_price_per_sqft": 7946.68,
+      "min_area": 710.0,
+      "max_area": 3000.0
+    },
+    "Sector-34B Kharghar": {
+      "count": 1,
+      "avg_price": 9900000.0,
+      "median_price": 9900000.0,
+      "avg_price_per_sqft": 9658.54,
+      "median_price_per_sqft": 9658.54,
+      "min_area": 1025.0,
+      "max_area": 1025.0
+    },
+    "Sector-35 Kamothe": {
+      "count": 1,
+      "avg_price": 7500000.0,
+      "median_price": 7500000.0,
+      "avg_price_per_sqft": 7142.86,
+      "median_price_per_sqft": 7142.86,
+      "min_area": 1050.0,
+      "max_area": 1050.0
+    },
+    "Sector-5 Kamothe": {
+      "count": 1,
+      "avg_price": 3800000.0,
+      "median_price": 3800000.0,
+      "avg_price_per_sqft": 6785.71,
+      "median_price_per_sqft": 6785.71,
+      "min_area": 560.0,
+      "max_area": 560.0
+    },
+    "Sector-50 Seawoods": {
+      "count": 1,
+      "avg_price": 16000000.0,
+      "median_price": 16000000.0,
+      "avg_price_per_sqft": 9696.97,
+      "median_price_per_sqft": 9696.97,
+      "min_area": 1650.0,
+      "max_area": 1650.0
+    },
+    "Sector-6A Kamothe": {
+      "count": 1,
+      "avg_price": 3600000.0,
+      "median_price": 3600000.0,
+      "avg_price_per_sqft": 6206.9,
+      "median_price_per_sqft": 6206.9,
+      "min_area": 580.0,
+      "max_area": 580.0
+    },
+    "Sector-8 Sanpada": {
+      "count": 1,
+      "avg_price": 23000000.0,
+      "median_price": 23000000.0,
+      "avg_price_per_sqft": 13690.48,
+      "median_price_per_sqft": 13690.48,
+      "min_area": 1680.0,
+      "max_area": 1680.0
+    },
+    "Sector-8 Ulwe": {
+      "count": 6,
+      "avg_price": 12783333.17,
+      "median_price": 11150000.0,
+      "avg_price_per_sqft": 7915.72,
+      "median_price_per_sqft": 7767.78,
+      "min_area": 650.0,
+      "max_area": 2900.0
+    },
+    "Sector-9 Ghansoli": {
+      "count": 1,
+      "avg_price": 32500000.0,
+      "median_price": 32500000.0,
+      "avg_price_per_sqft": 13457.56,
+      "median_price_per_sqft": 13457.56,
+      "min_area": 2415.0,
+      "max_area": 2415.0
+    },
+    "Sector-9 Ulwe": {
+      "count": 1,
+      "avg_price": 8725000.0,
+      "median_price": 8725000.0,
+      "avg_price_per_sqft": 7687.22,
+      "median_price_per_sqft": 7687.22,
+      "min_area": 1135.0,
+      "max_area": 1135.0
+    },
+    "Sector12 Kamothe": {
+      "count": 9,
+      "avg_price": 8944444.44,
+      "median_price": 8500000.0,
+      "avg_price_per_sqft": 7721.1,
+      "median_price_per_sqft": 7391.3,
+      "min_area": 620.0,
+      "max_area": 1700.0
+    },
+    "Sector12 New Panvel": {
+      "count": 1,
+      "avg_price": 9000000.0,
+      "median_price": 9000000.0,
+      "avg_price_per_sqft": 7142.86,
+      "median_price_per_sqft": 7142.86,
+      "min_area": 1260.0,
+      "max_area": 1260.0
+    },
+    "Sector13 Khanda Colony": {
+      "count": 1,
+      "avg_price": 5000000.0,
+      "median_price": 5000000.0,
+      "avg_price_per_sqft": 10000.0,
+      "median_price_per_sqft": 10000.0,
+      "min_area": 500.0,
+      "max_area": 500.0
+    },
+    "Sector13 Kharghar": {
+      "count": 1,
+      "avg_price": 3700000.0,
+      "median_price": 3700000.0,
+      "avg_price_per_sqft": 6727.27,
+      "median_price_per_sqft": 6727.27,
+      "min_area": 550.0,
+      "max_area": 550.0
+    },
+    "Sector16 Airoli": {
+      "count": 2,
+      "avg_price": 5050000.0,
+      "median_price": 5050000.0,
+      "avg_price_per_sqft": 9881.6,
+      "median_price_per_sqft": 9881.6,
+      "min_area": 450.0,
+      "max_area": 610.0
+    },
+    "Sector16 Ulwe": {
+      "count": 1,
+      "avg_price": 4200000.0,
+      "median_price": 4200000.0,
+      "avg_price_per_sqft": 6461.54,
+      "median_price_per_sqft": 6461.54,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Sector34 A Kharghar": {
+      "count": 1,
+      "avg_price": 5000000.0,
+      "median_price": 5000000.0,
+      "avg_price_per_sqft": 7692.31,
+      "median_price_per_sqft": 7692.31,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Sector35D Kharghar": {
+      "count": 4,
+      "avg_price": 10750000.0,
+      "median_price": 6900000.0,
+      "avg_price_per_sqft": 7679.51,
+      "median_price_per_sqft": 7633.33,
+      "min_area": 640.0,
+      "max_area": 3000.0
+    },
+    "Sector8 Sanpada": {
+      "count": 1,
+      "avg_price": 6000000.0,
+      "median_price": 6000000.0,
+      "avg_price_per_sqft": 16085.79,
+      "median_price_per_sqft": 16085.79,
+      "min_area": 373.0,
+      "max_area": 373.0
+    },
+    "Sector9 Kamothe": {
+      "count": 7,
+      "avg_price": 11428571.43,
+      "median_price": 10500000.0,
+      "avg_price_per_sqft": 9439.93,
+      "median_price_per_sqft": 9012.88,
+      "min_area": 610.0,
+      "max_area": 1735.0
+    },
+    "Sen Nagar": {
+      "count": 3,
+      "avg_price": 26000000.0,
+      "median_price": 26000000.0,
+      "avg_price_per_sqft": 23661.38,
+      "median_price_per_sqft": 23111.11,
+      "min_area": 1050.0,
+      "max_area": 1125.0
+    },
+    "Seven Bunglow": {
+      "count": 1,
+      "avg_price": 29200000.0,
+      "median_price": 29200000.0,
+      "avg_price_per_sqft": 32123.21,
+      "median_price_per_sqft": 32123.21,
+      "min_area": 909.0,
+      "max_area": 909.0
+    },
+    "Sewri": {
+      "count": 2,
+      "avg_price": 15500000.0,
+      "median_price": 15500000.0,
+      "avg_price_per_sqft": 25409.84,
+      "median_price_per_sqft": 25409.84,
+      "min_area": 610.0,
+      "max_area": 610.0
+    },
+    "Shakti Nagar": {
+      "count": 2,
+      "avg_price": 7550000.0,
+      "median_price": 7550000.0,
+      "avg_price_per_sqft": 12678.32,
+      "median_price_per_sqft": 12678.32,
+      "min_area": 550.0,
+      "max_area": 650.0
+    },
+    "Shastri Nagar": {
+      "count": 2,
+      "avg_price": 74500000.0,
+      "median_price": 74500000.0,
+      "avg_price_per_sqft": 33809.52,
+      "median_price_per_sqft": 33809.52,
+      "min_area": 1050.0,
+      "max_area": 3000.0
+    },
+    "Shil Phata": {
+      "count": 6,
+      "avg_price": 5250000.0,
+      "median_price": 5500000.0,
+      "avg_price_per_sqft": 9275.43,
+      "median_price_per_sqft": 9359.84,
+      "min_area": 424.0,
+      "max_area": 700.0
+    },
+    "Shilphata Road Thane": {
+      "count": 1,
+      "avg_price": 6000000.0,
+      "median_price": 6000000.0,
+      "avg_price_per_sqft": 6779.66,
+      "median_price_per_sqft": 6779.66,
+      "min_area": 885.0,
+      "max_area": 885.0
+    },
+    "Shimpoli": {
+      "count": 1,
+      "avg_price": 21000000.0,
+      "median_price": 21000000.0,
+      "avg_price_per_sqft": 23333.33,
+      "median_price_per_sqft": 23333.33,
+      "min_area": 900.0,
+      "max_area": 900.0
+    },
+    "Shirgaon": {
+      "count": 5,
+      "avg_price": 2370000.0,
+      "median_price": 2350000.0,
+      "avg_price_per_sqft": 3952.42,
+      "median_price_per_sqft": 3550.0,
+      "min_area": 400.0,
+      "max_area": 700.0
+    },
+    "Shiv Sagar Estate": {
+      "count": 1,
+      "avg_price": 55000000.0,
+      "median_price": 55000000.0,
+      "avg_price_per_sqft": 44897.96,
+      "median_price_per_sqft": 44897.96,
+      "min_area": 1225.0,
+      "max_area": 1225.0
+    },
+    "Shivaji Colony": {
+      "count": 1,
+      "avg_price": 4400000.0,
+      "median_price": 4400000.0,
+      "avg_price_per_sqft": 14426.23,
+      "median_price_per_sqft": 14426.23,
+      "min_area": 305.0,
+      "max_area": 305.0
+    },
+    "Shreyas Colony": {
+      "count": 1,
+      "avg_price": 11700000.0,
+      "median_price": 11700000.0,
+      "avg_price_per_sqft": 21272.73,
+      "median_price_per_sqft": 21272.73,
+      "min_area": 550.0,
+      "max_area": 550.0
+    },
+    "Sindhi Society Chembur": {
+      "count": 1,
+      "avg_price": 18600000.0,
+      "median_price": 18600000.0,
+      "avg_price_per_sqft": 17432.05,
+      "median_price_per_sqft": 17432.05,
+      "min_area": 1067.0,
+      "max_area": 1067.0
+    },
+    "Sion": {
+      "count": 10,
+      "avg_price": 44580000.0,
+      "median_price": 16750000.0,
+      "avg_price_per_sqft": 22490.65,
+      "median_price_per_sqft": 20684.18,
+      "min_area": 538.0,
+      "max_area": 5642.0
+    },
+    "Soniwadi Road": {
+      "count": 1,
+      "avg_price": 21000000.0,
+      "median_price": 21000000.0,
+      "avg_price_per_sqft": 23333.33,
+      "median_price_per_sqft": 23333.33,
+      "min_area": 900.0,
+      "max_area": 900.0
+    },
+    "Sriprastha": {
+      "count": 3,
+      "avg_price": 4450000.0,
+      "median_price": 4350000.0,
+      "avg_price_per_sqft": 5270.17,
+      "median_price_per_sqft": 5437.5,
+      "min_area": 800.0,
+      "max_area": 900.0
+    },
+    "Suburbs Mumbai": {
+      "count": 1,
+      "avg_price": 11100000.0,
+      "median_price": 11100000.0,
+      "avg_price_per_sqft": 20181.82,
+      "median_price_per_sqft": 20181.82,
+      "min_area": 550.0,
+      "max_area": 550.0
+    },
+    "Suman Nagar": {
+      "count": 1,
+      "avg_price": 21500000.0,
+      "median_price": 21500000.0,
+      "avg_price_per_sqft": 21287.13,
+      "median_price_per_sqft": 21287.13,
+      "min_area": 1010.0,
+      "max_area": 1010.0
+    },
+    "Sunil Nagar": {
+      "count": 1,
+      "avg_price": 7500000.0,
+      "median_price": 7500000.0,
+      "avg_price_per_sqft": 8333.33,
+      "median_price_per_sqft": 8333.33,
+      "min_area": 900.0,
+      "max_area": 900.0
+    },
+    "Syndicate": {
+      "count": 1,
+      "avg_price": 2600000.0,
+      "median_price": 2600000.0,
+      "avg_price_per_sqft": 6753.25,
+      "median_price_per_sqft": 6753.25,
+      "min_area": 385.0,
+      "max_area": 385.0
+    },
+    "TPS Road": {
+      "count": 1,
+      "avg_price": 18500000.0,
+      "median_price": 18500000.0,
+      "avg_price_per_sqft": 15416.67,
+      "median_price_per_sqft": 15416.67,
+      "min_area": 1200.0,
+      "max_area": 1200.0
+    },
+    "Taloja": {
+      "count": 65,
+      "avg_price": 3989661.54,
+      "median_price": 3750000.0,
+      "avg_price_per_sqft": 5238.74,
+      "median_price_per_sqft": 5153.85,
+      "min_area": 400.0,
+      "max_area": 1550.0
+    },
+    "Taloja Bypass Nitalas Link Road": {
+      "count": 1,
+      "avg_price": 3600000.0,
+      "median_price": 3600000.0,
+      "avg_price_per_sqft": 5217.39,
+      "median_price_per_sqft": 5217.39,
+      "min_area": 690.0,
+      "max_area": 690.0
+    },
+    "Taloje": {
+      "count": 1,
+      "avg_price": 2250000.0,
+      "median_price": 2250000.0,
+      "avg_price_per_sqft": 5208.33,
+      "median_price_per_sqft": 5208.33,
+      "min_area": 432.0,
+      "max_area": 432.0
+    },
+    "Tardeo": {
+      "count": 5,
+      "avg_price": 111200000.0,
+      "median_price": 100000000.0,
+      "avg_price_per_sqft": 45345.16,
+      "median_price_per_sqft": 44191.92,
+      "min_area": 1174.0,
+      "max_area": 3321.0
+    },
+    "Thakur Village": {
+      "count": 8,
+      "avg_price": 19974999.88,
+      "median_price": 21500000.0,
+      "avg_price_per_sqft": 16625.76,
+      "median_price_per_sqft": 15692.31,
+      "min_area": 650.0,
+      "max_area": 1830.0
+    },
+    "Thakur complex": {
+      "count": 4,
+      "avg_price": 12750000.0,
+      "median_price": 13850000.0,
+      "avg_price_per_sqft": 12934.9,
+      "median_price_per_sqft": 14445.05,
+      "min_area": 610.0,
+      "max_area": 1225.0
+    },
+    "Thakurli": {
+      "count": 1,
+      "avg_price": 6300000.0,
+      "median_price": 6300000.0,
+      "avg_price_per_sqft": 8400.0,
+      "median_price_per_sqft": 8400.0,
+      "min_area": 750.0,
+      "max_area": 750.0
+    },
+    "Thane": {
+      "count": 20,
+      "avg_price": 5070000.0,
+      "median_price": 4900000.0,
+      "avg_price_per_sqft": 9941.05,
+      "median_price_per_sqft": 8166.67,
+      "min_area": 275.0,
+      "max_area": 1375.0
+    },
+    "Thane Belapur Road Kalwa": {
+      "count": 2,
+      "avg_price": 5900000.0,
+      "median_price": 5900000.0,
+      "avg_price_per_sqft": 9546.96,
+      "median_price_per_sqft": 9546.96,
+      "min_area": 560.0,
+      "max_area": 675.0
+    },
+    "Thane West": {
+      "count": 418,
+      "avg_price": 12008191.36,
+      "median_price": 9800000.0,
+      "avg_price_per_sqft": 12382.7,
+      "median_price_per_sqft": 11094.02,
+      "min_area": 239.0,
+      "max_area": 5245.0
+    },
+    "Tilak Nagar": {
+      "count": 1,
+      "avg_price": 18500000.0,
+      "median_price": 18500000.0,
+      "avg_price_per_sqft": 16086.96,
+      "median_price_per_sqft": 16086.96,
+      "min_area": 1150.0,
+      "max_area": 1150.0
+    },
+    "Tilak Nagar Mumbai": {
+      "count": 1,
+      "avg_price": 8000000.0,
+      "median_price": 8000000.0,
+      "avg_price_per_sqft": 6153.85,
+      "median_price_per_sqft": 6153.85,
+      "min_area": 1300.0,
+      "max_area": 1300.0
+    },
+    "Titwala": {
+      "count": 24,
+      "avg_price": 2699541.62,
+      "median_price": 2582000.0,
+      "avg_price_per_sqft": 3982.7,
+      "median_price_per_sqft": 4052.66,
+      "min_area": 550.0,
+      "max_area": 960.0
+    },
+    "Tolaram Colony": {
+      "count": 2,
+      "avg_price": 11000000.0,
+      "median_price": 11000000.0,
+      "avg_price_per_sqft": 17083.33,
+      "median_price_per_sqft": 17083.33,
+      "min_area": 600.0,
+      "max_area": 700.0
+    },
+    "ULWE SECTOR 19": {
+      "count": 1,
+      "avg_price": 3700000.0,
+      "median_price": 3700000.0,
+      "avg_price_per_sqft": 5692.31,
+      "median_price_per_sqft": 5692.31,
+      "min_area": 650.0,
+      "max_area": 650.0
+    },
+    "Ulwe": {
+      "count": 319,
+      "avg_price": 7761683.37,
+      "median_price": 7100000.0,
+      "avg_price_per_sqft": 7588.96,
+      "median_price_per_sqft": 7428.57,
+      "min_area": 385.0,
+      "max_area": 3400.0
+    },
+    "Upper Worli": {
+      "count": 1,
+      "avg_price": 120000000.0,
+      "median_price": 120000000.0,
+      "avg_price_per_sqft": 34285.71,
+      "median_price_per_sqft": 34285.71,
+      "min_area": 3500.0,
+      "max_area": 3500.0
+    },
+    "Uran": {
+      "count": 2,
+      "avg_price": 5325500.0,
+      "median_price": 5325500.0,
+      "avg_price_per_sqft": 6017.01,
+      "median_price_per_sqft": 6017.01,
+      "min_area": 650.0,
+      "max_area": 1125.0
+    },
+    "Vakola": {
+      "count": 1,
+      "avg_price": 21700000.0,
+      "median_price": 21700000.0,
+      "avg_price_per_sqft": 24111.11,
+      "median_price_per_sqft": 24111.11,
+      "min_area": 900.0,
+      "max_area": 900.0
+    },
+    "Vakola Pipeline Road": {
+      "count": 1,
+      "avg_price": 15500000.0,
+      "median_price": 15500000.0,
+      "avg_price_per_sqft": 15500.0,
+      "median_price_per_sqft": 15500.0,
+      "min_area": 1000.0,
+      "max_area": 1000.0
+    },
+    "Vangani": {
+      "count": 4,
+      "avg_price": 2250000.0,
+      "median_price": 2250000.0,
+      "avg_price_per_sqft": 4129.67,
+      "median_price_per_sqft": 3796.47,
+      "min_area": 425.0,
+      "max_area": 690.0
+    },
+    "Vartak Nagar": {
+      "count": 5,
+      "avg_price": 8177799.8,
+      "median_price": 7495999.0,
+      "avg_price_per_sqft": 9653.61,
+      "median_price_per_sqft": 9538.46,
+      "min_area": 570.0,
+      "max_area": 1300.0
+    },
+    "Vasai": {
+      "count": 41,
+      "avg_price": 5511219.51,
+      "median_price": 4150000.0,
+      "avg_price_per_sqft": 6781.24,
+      "median_price_per_sqft": 6000.0,
+      "min_area": 342.0,
+      "max_area": 1296.0
+    },
+    "Vasai West": {
+      "count": 18,
+      "avg_price": 4938833.33,
+      "median_price": 4450000.0,
+      "avg_price_per_sqft": 6758.38,
+      "median_price_per_sqft": 6333.56,
+      "min_area": 216.0,
+      "max_area": 1975.0
+    },
+    "Vasai east": {
+      "count": 15,
+      "avg_price": 3808400.0,
+      "median_price": 3200000.0,
+      "avg_price_per_sqft": 5787.64,
+      "median_price_per_sqft": 5333.33,
+      "min_area": 285.0,
+      "max_area": 1250.0
+    },
+    "Vasant Vihar": {
+      "count": 7,
+      "avg_price": 25371428.57,
+      "median_price": 31000000.0,
+      "avg_price_per_sqft": 16777.33,
+      "median_price_per_sqft": 14418.6,
+      "min_area": 508.0,
+      "max_area": 2150.0
+    },
+    "Vashi": {
+      "count": 12,
+      "avg_price": 23208333.33,
+      "median_price": 25000000.0,
+      "avg_price_per_sqft": 15737.93,
+      "median_price_per_sqft": 15312.5,
+      "min_area": 570.0,
+      "max_area": 2050.0
+    },
+    "Vasind": {
+      "count": 1,
+      "avg_price": 2000000.0,
+      "median_price": 2000000.0,
+      "avg_price_per_sqft": 3703.7,
+      "median_price_per_sqft": 3703.7,
+      "min_area": 540.0,
+      "max_area": 540.0
+    },
+    "Vazira": {
+      "count": 1,
+      "avg_price": 8500000.0,
+      "median_price": 8500000.0,
+      "avg_price_per_sqft": 20987.65,
+      "median_price_per_sqft": 20987.65,
+      "min_area": 405.0,
+      "max_area": 405.0
+    },
+    "Vedant Complex": {
+      "count": 1,
+      "avg_price": 28000000.0,
+      "median_price": 28000000.0,
+      "avg_price_per_sqft": 35000.0,
+      "median_price_per_sqft": 35000.0,
+      "min_area": 800.0,
+      "max_area": 800.0
+    },
+    "Versova": {
+      "count": 1,
+      "avg_price": 32500000.0,
+      "median_price": 32500000.0,
+      "avg_price_per_sqft": 34574.47,
+      "median_price_per_sqft": 34574.47,
+      "min_area": 940.0,
+      "max_area": 940.0
+    },
+    "Vichumbe": {
+      "count": 1,
+      "avg_price": 4050000.0,
+      "median_price": 4050000.0,
+      "avg_price_per_sqft": 6000.0,
+      "median_price_per_sqft": 6000.0,
+      "min_area": 675.0,
+      "max_area": 675.0
+    },
+    "Vijay Nagar": {
+      "count": 1,
+      "avg_price": 4550000.0,
+      "median_price": 4550000.0,
+      "avg_price_per_sqft": 5290.7,
+      "median_price_per_sqft": 5290.7,
+      "min_area": 860.0,
+      "max_area": 860.0
+    },
+    "Vikhroli": {
+      "count": 7,
+      "avg_price": 19671428.43,
+      "median_price": 15500000.0,
+      "avg_price_per_sqft": 22190.18,
+      "median_price_per_sqft": 23076.92,
+      "min_area": 580.0,
+      "max_area": 1180.0
+    },
+    "Vikhroli West": {
+      "count": 2,
+      "avg_price": 9350000.0,
+      "median_price": 9350000.0,
+      "avg_price_per_sqft": 15769.23,
+      "median_price_per_sqft": 15769.23,
+      "min_area": 585.0,
+      "max_area": 600.0
+    },
+    "Vikroli East": {
+      "count": 4,
+      "avg_price": 11450000.0,
+      "median_price": 12000000.0,
+      "avg_price_per_sqft": 16166.67,
+      "median_price_per_sqft": 16000.0,
+      "min_area": 300.0,
+      "max_area": 1100.0
+    },
+    "Vile Parle": {
+      "count": 1,
+      "avg_price": 10500000.0,
+      "median_price": 10500000.0,
+      "avg_price_per_sqft": 13815.79,
+      "median_price_per_sqft": 13815.79,
+      "min_area": 760.0,
+      "max_area": 760.0
+    },
+    "Vile Parle E": {
+      "count": 1,
+      "avg_price": 65000000.0,
+      "median_price": 65000000.0,
+      "avg_price_per_sqft": 28888.89,
+      "median_price_per_sqft": 28888.89,
+      "min_area": 2250.0,
+      "max_area": 2250.0
+    },
+    "Ville Parle East": {
+      "count": 63,
+      "avg_price": 32517460.32,
+      "median_price": 29000000.0,
+      "avg_price_per_sqft": 29492.47,
+      "median_price_per_sqft": 29473.68,
+      "min_area": 320.0,
+      "max_area": 2660.0
+    },
+    "Ville Parle West": {
+      "count": 7,
+      "avg_price": 42442857.14,
+      "median_price": 39000000.0,
+      "avg_price_per_sqft": 41519.57,
+      "median_price_per_sqft": 41489.36,
+      "min_area": 750.0,
+      "max_area": 1350.0
+    },
+    "Virar": {
+      "count": 107,
+      "avg_price": 3945448.52,
+      "median_price": 3797999.0,
+      "avg_price_per_sqft": 5635.45,
+      "median_price_per_sqft": 4577.11,
+      "min_area": 338.0,
+      "max_area": 1350.0
+    },
+    "Virar East": {
+      "count": 13,
+      "avg_price": 2554384.62,
+      "median_price": 2500000.0,
+      "avg_price_per_sqft": 4788.71,
+      "median_price_per_sqft": 4629.63,
+      "min_area": 370.0,
+      "max_area": 715.0
+    },
+    "Virar West": {
+      "count": 15,
+      "avg_price": 3633866.67,
+      "median_price": 3500000.0,
+      "avg_price_per_sqft": 4679.46,
+      "median_price_per_sqft": 4465.12,
+      "min_area": 500.0,
+      "max_area": 1075.0
+    },
+    "VishnuNagar": {
+      "count": 1,
+      "avg_price": 11000000.0,
+      "median_price": 11000000.0,
+      "avg_price_per_sqft": 18803.42,
+      "median_price_per_sqft": 18803.42,
+      "min_area": 585.0,
+      "max_area": 585.0
+    },
+    "Vitthalwadi": {
+      "count": 1,
+      "avg_price": 8000000.0,
+      "median_price": 8000000.0,
+      "avg_price_per_sqft": 4000.0,
+      "median_price_per_sqft": 4000.0,
+      "min_area": 2000.0,
+      "max_area": 2000.0
+    },
+    "Vivek Vidyalaya Marg": {
+      "count": 1,
+      "avg_price": 11000000.0,
+      "median_price": 11000000.0,
+      "avg_price_per_sqft": 20000.0,
+      "median_price_per_sqft": 20000.0,
+      "min_area": 550.0,
+      "max_area": 550.0
+    },
+    "Wadala": {
+      "count": 25,
+      "avg_price": 31707999.92,
+      "median_price": 28800000.0,
+      "avg_price_per_sqft": 23986.3,
+      "median_price_per_sqft": 24467.25,
+      "min_area": 505.0,
+      "max_area": 2695.0
+    },
+    "Wadala East": {
+      "count": 5,
+      "avg_price": 20780000.0,
+      "median_price": 23900000.0,
+      "avg_price_per_sqft": 24684.46,
+      "median_price_per_sqft": 25130.89,
+      "min_area": 513.0,
+      "max_area": 1042.0
+    },
+    "Wadala East Wadala": {
+      "count": 13,
+      "avg_price": 24938461.54,
+      "median_price": 18000000.0,
+      "avg_price_per_sqft": 20711.72,
+      "median_price_per_sqft": 20289.86,
+      "min_area": 680.0,
+      "max_area": 2600.0
+    },
+    "Wadi Bandar": {
+      "count": 1,
+      "avg_price": 14500000.0,
+      "median_price": 14500000.0,
+      "avg_price_per_sqft": 15263.16,
+      "median_price_per_sqft": 15263.16,
+      "min_area": 950.0,
+      "max_area": 950.0
+    },
+    "West Amardeep Colony": {
+      "count": 1,
+      "avg_price": 17600000.0,
+      "median_price": 17600000.0,
+      "avg_price_per_sqft": 16000.0,
+      "median_price_per_sqft": 16000.0,
+      "min_area": 1100.0,
+      "max_area": 1100.0
+    },
+    "Western Express Highway Kandivali East": {
+      "count": 1,
+      "avg_price": 23000000.0,
+      "median_price": 23000000.0,
+      "avg_price_per_sqft": 18181.82,
+      "median_price_per_sqft": 18181.82,
+      "min_area": 1265.0,
+      "max_area": 1265.0
+    },
+    "Willingdon": {
+      "count": 1,
+      "avg_price": 66600000.0,
+      "median_price": 66600000.0,
+      "avg_price_per_sqft": 79951.98,
+      "median_price_per_sqft": 79951.98,
+      "min_area": 833.0,
+      "max_area": 833.0
+    },
+    "Worli": {
+      "count": 23,
+      "avg_price": 94000000.0,
+      "median_price": 72500000.0,
+      "avg_price_per_sqft": 38261.95,
+      "median_price_per_sqft": 38888.89,
+      "min_area": 800.0,
+      "max_area": 6900.0
+    },
+    "Worli South Mumbai": {
+      "count": 2,
+      "avg_price": 233250000.0,
+      "median_price": 233250000.0,
+      "avg_price_per_sqft": 41128.3,
+      "median_price_per_sqft": 41128.3,
+      "min_area": 1413.0,
+      "max_area": 8511.0
+    },
+    "Yari Road": {
+      "count": 2,
+      "avg_price": 122500000.0,
+      "median_price": 122500000.0,
+      "avg_price_per_sqft": 43389.07,
+      "median_price_per_sqft": 43389.07,
+      "min_area": 2320.0,
+      "max_area": 3320.0
+    },
+    "Yogi Hills": {
+      "count": 1,
+      "avg_price": 8500000.0,
+      "median_price": 8500000.0,
+      "avg_price_per_sqft": 10000.0,
+      "median_price_per_sqft": 10000.0,
+      "min_area": 850.0,
+      "max_area": 850.0
+    },
+    "azad nagar": {
+      "count": 1,
+      "avg_price": 21000000.0,
+      "median_price": 21000000.0,
+      "avg_price_per_sqft": 33870.97,
+      "median_price_per_sqft": 33870.97,
+      "min_area": 620.0,
+      "max_area": 620.0
+    },
+    "dhanukarwadi": {
+      "count": 1,
+      "avg_price": 22200000.0,
+      "median_price": 22200000.0,
+      "avg_price_per_sqft": 22311.56,
+      "median_price_per_sqft": 22311.56,
+      "min_area": 995.0,
+      "max_area": 995.0
+    },
+    "gokuldham": {
+      "count": 1,
+      "avg_price": 8500000.0,
+      "median_price": 8500000.0,
+      "avg_price_per_sqft": 18888.89,
+      "median_price_per_sqft": 18888.89,
+      "min_area": 450.0,
+      "max_area": 450.0
+    },
+    "juhu tara": {
+      "count": 1,
+      "avg_price": 180000000.0,
+      "median_price": 180000000.0,
+      "avg_price_per_sqft": 81818.18,
+      "median_price_per_sqft": 81818.18,
+      "min_area": 2200.0,
+      "max_area": 2200.0
+    },
+    "kandivali": {
+      "count": 9,
+      "avg_price": 13500000.0,
+      "median_price": 11000000.0,
+      "avg_price_per_sqft": 13002.26,
+      "median_price_per_sqft": 11164.27,
+      "min_area": 627.0,
+      "max_area": 1495.0
+    },
+    "kavesar": {
+      "count": 6,
+      "avg_price": 8849166.5,
+      "median_price": 9398500.0,
+      "avg_price_per_sqft": 8423.88,
+      "median_price_per_sqft": 8545.0,
+      "min_area": 730.0,
+      "max_area": 1200.0
+    },
+    "kolshet": {
+      "count": 5,
+      "avg_price": 8800000.0,
+      "median_price": 9000000.0,
+      "avg_price_per_sqft": 10578.26,
+      "median_price_per_sqft": 10470.09,
+      "min_area": 576.0,
+      "max_area": 1026.0
+    },
+    "link road borivali west": {
+      "count": 1,
+      "avg_price": 23500000.0,
+      "median_price": 23500000.0,
+      "avg_price_per_sqft": 18076.92,
+      "median_price_per_sqft": 18076.92,
+      "min_area": 1300.0,
+      "max_area": 1300.0
+    },
+    "matunga east": {
+      "count": 12,
+      "avg_price": 36250000.0,
+      "median_price": 33500000.0,
+      "avg_price_per_sqft": 36235.34,
+      "median_price_per_sqft": 33466.67,
+      "min_area": 560.0,
+      "max_area": 1296.0
+    },
+    "mumbai": {
+      "count": 15,
+      "avg_price": 12871199.93,
+      "median_price": 4500000.0,
+      "avg_price_per_sqft": 11522.03,
+      "median_price_per_sqft": 6891.27,
+      "min_area": 400.0,
+      "max_area": 2700.0
+    },
+    "no 9": {
+      "count": 1,
+      "avg_price": 26000000.0,
+      "median_price": 26000000.0,
+      "avg_price_per_sqft": 19259.26,
+      "median_price_per_sqft": 19259.26,
+      "min_area": 1350.0,
+      "max_area": 1350.0
+    },
+    "raheja vihar": {
+      "count": 2,
+      "avg_price": 14450000.0,
+      "median_price": 14450000.0,
+      "avg_price_per_sqft": 18351.71,
+      "median_price_per_sqft": 18351.71,
+      "min_area": 585.0,
+      "max_area": 1000.0
+    },
+    "roadpali navimumbai": {
+      "count": 3,
+      "avg_price": 9583333.33,
+      "median_price": 8400000.0,
+      "avg_price_per_sqft": 7517.5,
+      "median_price_per_sqft": 7374.89,
+      "min_area": 1139.0,
+      "max_area": 1525.0
+    },
+    "royal palms goregaon east": {
+      "count": 1,
+      "avg_price": 5300000.0,
+      "median_price": 5300000.0,
+      "avg_price_per_sqft": 9724.77,
+      "median_price_per_sqft": 9724.77,
+      "min_area": 545.0,
+      "max_area": 545.0
+    },
+    "sec 50 new": {
+      "count": 1,
+      "avg_price": 8200000.0,
+      "median_price": 8200000.0,
+      "avg_price_per_sqft": 8200.0,
+      "median_price_per_sqft": 8200.0,
+      "min_area": 1000.0,
+      "max_area": 1000.0
+    },
+    "taloja panchanand": {
+      "count": 8,
+      "avg_price": 5200000.0,
+      "median_price": 5200000.0,
+      "avg_price_per_sqft": 5689.25,
+      "median_price_per_sqft": 5402.52,
+      "min_area": 670.0,
+      "max_area": 1115.0
+    },
+    "thakur village kandivali east": {
+      "count": 3,
+      "avg_price": 13700000.0,
+      "median_price": 9000000.0,
+      "avg_price_per_sqft": 16163.0,
+      "median_price_per_sqft": 16071.43,
+      "min_area": 560.0,
+      "max_area": 1300.0
+    },
+    "ulhasnagar 4": {
+      "count": 1,
+      "avg_price": 2050000.0,
+      "median_price": 2050000.0,
+      "avg_price_per_sqft": 2050.0,
+      "median_price_per_sqft": 2050.0,
+      "min_area": 1000.0,
+      "max_area": 1000.0
+    },
+    "vasant vihar thane west": {
+      "count": 4,
+      "avg_price": 10975000.0,
+      "median_price": 11500000.0,
+      "avg_price_per_sqft": 11829.83,
+      "median_price_per_sqft": 11723.17,
+      "min_area": 506.0,
+      "max_area": 1109.0
+    },
+    "vile parle west": {
+      "count": 7,
+      "avg_price": 39857142.86,
+      "median_price": 33500000.0,
+      "avg_price_per_sqft": 34596.84,
+      "median_price_per_sqft": 32738.1,
+      "min_area": 550.0,
+      "max_area": 1735.0
+    },
+    "vrindavan society": {
+      "count": 1,
+      "avg_price": 7800000.0,
+      "median_price": 7800000.0,
+      "avg_price_per_sqft": 14311.93,
+      "median_price_per_sqft": 14311.93,
+      "min_area": 545.0,
+      "max_area": 545.0
+    },
+    "worli sea Fase": {
+      "count": 1,
+      "avg_price": 153600000.0,
+      "median_price": 153600000.0,
+      "avg_price_per_sqft": 48000.0,
+      "median_price_per_sqft": 48000.0,
+      "min_area": 3200.0,
+      "max_area": 3200.0
+    },
+    "worli sea face": {
+      "count": 1,
+      "avg_price": 75000000.0,
+      "median_price": 75000000.0,
+      "avg_price_per_sqft": 50000.0,
+      "median_price_per_sqft": 50000.0,
+      "min_area": 1500.0,
+      "max_area": 1500.0
+    }
+  }
+}
